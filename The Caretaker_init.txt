@@ -76,17 +76,17 @@ campaignTrail_temp.candidate_json = [
         "model": "campaign_trail.candidate",
         "pk": 1001,
         "fields": {
-            "first_name": "Gerald R.",
-            "last_name": "Ford",
+            "first_name": "Richard",
+            "last_name": "Nixon",
             "election": 10,
             "party": "Republican Party",
-            "state": "Michigan",
+            "state": "California",
             "priority": 1,
             "description": "<h3><b>Speaker of the House.</h3></b></p>\n\n<b>That's all Gerry Ford had ever wanted.</b> Never was his goal to inherit the Oval Office from a corrupt, paranoid President who put himself above the nation's laws and the system of checks and balances; the first in history to resign. He didn't ask to be a part of this tragic chapter in the history of the United States.</p>\n\n<b>But, maybe, Ford is exactly what America needs</b>. After being ruled by a narcissistic and ruthless warmonger and his cabal of criminal sycophantic lackeyes, perhaps, only Gerry can repair this country? After all, isn't the best leader the one who wants power the least?</p>\n\nAlas, he cannot shirk this reponsibility now. <b>Time will tell if his work will be appreciated.</b>",
             "color_hex": "#7c7cd0",
             "secondary_color_hex": null,
             "is_active": 1,
-            "image_url": "https://i.imgur.com/pFjEMtO.png",
+            "image_url": "https://files.catbox.moe/rd4quk.png",
             "electoral_victory_message": "This guy wins!",
             "electoral_loss_message": "This guy loses!",
             "no_electoral_majority_message": "We all win?",
@@ -204,136 +204,7 @@ document.head.appendChild(styling);
 e = campaignTrail_temp;
 
 
-campaignTrail_temp.election_json = [
-    {
-        "model": "campaign_trail.election",
-        "pk": 10,
-        "fields": {
-            "year": 1976,
-            "display_year": "The Caretaker",
-            "summary": "<h3><b>The American Dream is on its deathbed.</b></h3></p>\n\nPolitical violence and terror shake the country. Crime and poverty reign in the cities. In 1973, for the first time in history, America lost a war. Then came the revelation that the President of the United States, her chief constitutional officer, was no better than a mafia don. <b>The last best hope on earth has seemingly fallen.</b></p>\n\nIt's at this pivotal moment that <b>Gerald Ford</b>, the man who wanted it the least, takes over the disillusioned, broken nation.</p>\n\nAs the exhausted country struggles to find its way between <b>reckoning, nostalgia, rage and denial</b>, Gerry Ford will have to fight tooth and nail to bring morning back to America - <b>or face the dark.</b>",
-            "image_url": "https://i.imgur.com/tAiHfUP.png",
-            "winning_electoral_vote_number": 270,
-            "advisor_url": "123",
-            "recommended_reading": "<ul>\n<li><a href=https://www.chicagotribune.com/opinion/editorials/ct-edit-chicago-tribune-biden-endorsement-20200925-lnyxsb5qvrftnjjmj3rnzj33jy-story.html>Our Case For Joe Biden</a></li>\n<li><a href=https://nationalinterest.org/feature/case-trump-166808>The Case For Trump</a></li>\n<li><a href=https://www.npr.org/2020/11/18/935730100/how-biden-won-ramping-up-the-base-and-expanding-margins-in-the-suburbs>How Biden Won: Ramping Up The Base And Expanding Margins In The Suburbs</a></li>\n<li><a href=https://www.prospectmagazine.co.uk/politics/donald-trump-joe-biden-us-election-almost-win-votes-concede>Why Did Trump Almost Win?</a></li>\n<li><a href=https://www.hoover.org/research/no-evidence-voter-fraud-guide-statistical-claims-about-2020-election>No Evidence For Voter Fraud: A Guide To Statistical Claims About The 2020 Election</a></li>\n</ul>",
-            "has_visits": 1,
-            "no_electoral_majority_image": "../static/images/2012-no-majority.jpg"
-        }
-    }
-]
 
-campaignTrail_temp.temp_election_list = [
-    {
-        "id": 10,
-        "year": 1976,
-        "is_premium": 0,
-        "display_year": "The Caretaker"
-    }
-]
-
-
-campaignTrail_temp.global_parameter_json = [
-    {
-        "model": "campaign_trail.global_parameter",
-        "pk": 1,
-        "fields": {
-            "vote_variable": 1.125,
-            "max_swing": 0.12,
-            "start_point": 0.94,
-            "candidate_issue_weight": 10,
-            "running_mate_issue_weight": 3,
-            "issue_stance_1_max": -0.71,
-            "issue_stance_2_max": -0.3,
-            "issue_stance_3_max": -0.125,
-            "issue_stance_4_max": 0.125,
-            "issue_stance_5_max": 0.3,
-            "issue_stance_6_max": 0.71,
-            "global_variance": 0.01,
-            "state_variance": 0.005,
-            "question_count": 30,
-            "default_map_color_hex": "#C9C9C9",
-            "no_state_map_color_hex": "#999999"
-        }
-    }
-]
-
-campaignTrail_temp.candidate_json = [
-    {
-        "model": "campaign_trail.candidate",
-        "pk": 1001,
-        "fields": {
-            "first_name": "Gerald R.",
-            "last_name": "Ford",
-            "election": 10,
-            "party": "Republican Party",
-            "state": "Michigan",
-            "priority": 1,
-            "description": "<h3><b>Speaker of the House.</h3></b></p>\n\n<b>That's all Gerry Ford had ever wanted.</b> Never was his goal to inherit the Oval Office from a corrupt, paranoid President who put himself above the nation's laws and the system of checks and balances; the first in history to resign. He didn't ask to be a part of this tragic chapter in the history of the United States.</p>\n\n<b>But, maybe, Ford is exactly what America needs</b>. After being ruled by a narcissistic and ruthless warmonger and his cabal of criminal sycophantic lackeyes, perhaps, only Gerry can repair this country? After all, isn't the best leader the one who wants power the least?</p>\n\nAlas, he cannot shirk this reponsibility now. <b>Time will tell if his work will be appreciated.</b>",
-            "color_hex": "#7c7cd0",
-            "secondary_color_hex": null,
-            "is_active": 1,
-            "image_url": "https://i.imgur.com/pFjEMtO.png",
-            "electoral_victory_message": "This guy wins!",
-            "electoral_loss_message": "This guy loses!",
-            "no_electoral_majority_message": "We all win?",
-            "description_as_running_mate": null,
-            "candidate_score": 1,
-            "running_mate": false
-        }
-    },
-    {
-        "model": "campaign_trail.candidate",
-        "pk": 2002,
-        "fields": {
-            "first_name": "Running",
-            "last_name": "Mate",
-            "election": 20,
-            "party": "Turbo Team",
-            "state": "Idaho",
-            "priority": 1,
-            "description": "<p>Put description here</p>",
-            "color_hex": "#0000FF",
-            "secondary_color_hex": null,
-            "is_active": 0,
-            "image_url": "https://www.jetsimon.com/public/candidateexample.png",
-            "electoral_victory_message": "This guy wins!",
-            "electoral_loss_message": "This guy loses!",
-            "no_electoral_majority_message": "We all win?",
-            "description_as_running_mate": "<p>This is a running mate description it only shows for running mates</p>",
-            "candidate_score": 1,
-            "running_mate": true
-        }
-    }
-]
-
-campaignTrail_temp.running_mate_json = [
-    {
-        "model": "campaign_trail.running_mate",
-        "pk": 109261,
-        "fields": {
-            "candidate": 1001,
-            "running_mate": 2002
-        }
-    }
-]
-
-campaignTrail_temp.opponents_default_json = [
-    {
-        "election": 10,
-        "candidates": [
-            1001
-        ]
-    }
-]
-
-campaignTrail_temp.opponents_weighted_json = [
-    {
-        "election": 10,
-        "candidates": [
-            1001
-        ]
-    }
-]
 
 jet_data = {
     "headerColor": "#395887",
@@ -420,6 +291,17 @@ styling.innerHTML = `
      bottom: -90px;
    }
 
+   #candidate_id_back {
+        position: relative;
+        bottom: -1000px;
+        opacity: 0;
+   }
+
+    #candidate_id_button {
+        position: relative;
+        left: -30px;
+   }
+
       #election_image {
           margin-left: 0px;
           margin-top: 0px;
@@ -439,6 +321,20 @@ styling.innerHTML = `
           opacity: 0;
         }
 
+        #candidate_image{
+          width: 274px;
+          height: 282px;
+          margin-right: 20px;
+          border:none;
+          outline:none;
+        }
+        #candidate_image img{
+          width: 274px;
+          height: 282px;
+          padding: 1px 1px; 
+          outline: 1px solid #C9C9C9;
+          
+        }
 
    @keyframes pulseGlow {
     0% {
@@ -463,6 +359,7 @@ styling.innerHTML = `
 let z = new MutationObserver((mutationsList, observer) => {
 
     let runningMateSummary = document.querySelector("#running_mate_summary");
+    
 
     if (runningMateSummary) {
 
@@ -474,9 +371,22 @@ let z = new MutationObserver((mutationsList, observer) => {
 
 });
 
+    
+let oblong = new MutationObserver((mutationsList, observer) => {
+    let electionDescriptionWindow = document.querySelector("#election_description_window");
+
+    if (electionDescriptionWindow) {
+
+        $("#election_id_button").click();
+
+        observer.disconnect()
+
+    }
+});
 
 
 z.observe(document, { subtree: true, childList: true });
+oblong.observe(document, { subtree: true, childList: true });
 
   function addDynamicCSS() {
     var css = `
@@ -533,19 +443,22 @@ z.observe(document, { subtree: true, childList: true });
         }
   
         .inner_window_question h3 .mytooltip{
-            background-color: lightskyblue;
+            background-color: "#32a4a8";
+            color: black;
+            font-style: italic;
+            padding: 2px; 
         }
   
         .mytooltip {
             position: relative;
             display: inline-block;
             cursor: pointer;
-            background-color: #d8dee8;
+            background-color: #32a4a8;
         }
   
         .mytooltip .mytooltiptext {
             width: 240px;
-            background-color: #d8dee8;
+            background-color: #32a4a8;
             color: black;
             text-align: center;
             border-radius: 6px;
@@ -589,7 +502,7 @@ z.observe(document, { subtree: true, childList: true });
 
   tooltipList = [
     // Q1
-    {searchString: "Hollywood nobodies", explanationText: "<img src=https://i.imgur.com/BcP7HEt.gif> Extremely Overrated!"},
+    {searchString: "Bob Dole", explanationText: "<img src=https://i.imgur.com/BcP7HEt.gif> Extremely Overrated!"},
     ];
 
 class Song {

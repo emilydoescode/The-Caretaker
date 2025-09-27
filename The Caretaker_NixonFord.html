@@ -5466,6 +5466,12 @@ e = campaignTrail_temp;
 e.noCounter = 0;
 var songChange = 0;
 
+var Wins = 0;
+var Cred = 0;
+var Econ = 0;
+var Social = -1;
+var Detente = -1;
+var Congress = -1;
 var NixonBye = 0;
 let vpSwitcherTriggered = false;
 let Nominee = "Nixon"; 
@@ -5523,3 +5529,45 @@ function updateQuestionBanner(runningMateId) {
 
     questionBanner.replaceWith(img);
 }
+
+function addHeadquarterButton() {
+    if(e.colorBlind){
+        var id = e.candidate_json.map(p=>p.pk).indexOf(80)
+        e.candidate_json[id].fields.color_hex = "#B52D1B" 
+        var id = e.candidate_json.map(p=>p.pk).indexOf(81)
+        e.candidate_json[id].fields.color_hex = "#2193CA" 
+        if(e.altcolors){
+            var id = e.candidate_json.map(p=>p.pk).indexOf(80)
+            e.candidate_json[id].fields.color_hex = "#2193CA" 
+            var id = e.candidate_json.map(p=>p.pk).indexOf(81)
+            e.candidate_json[id].fields.color_hex = "#B52D1B" 
+        }
+    }
+
+    // Check if the button already exists
+    if (document.getElementById('headquarter_button')) {
+        return;
+    }
+
+    // Find the reference button by its ID
+    const refButton = document.getElementById('view_electoral_map');
+    if (!refButton) {
+        return;
+    }
+
+    // Create a new button element
+    const newButton = document.createElement('button');
+
+    newButton.id = 'headquarter_button';
+
+    newButton.style.marginLeft = '1.5em';
+
+    newButton.innerHTML = 'File';
+
+    // Attach the click event listener
+    newButton.addEventListener('click', openSurrogates);
+
+    // Insert the new button next to the reference button
+    refButton.insertAdjacentElement('afterend', newButton);
+}
+
