@@ -14,12 +14,12 @@ campaignTrail_temp.election_json = [
         "pk": 10,
         "fields": {
             "year": 1976,
-            "display_year": "The Caretaker",
-            "summary": "<h3><b>The American Dream is on its deathbed.</b></h3></p>\n\nPolitical violence and terror shake the country. Crime and poverty reign in the cities. In 1973, for the first time in history, America lost a war. Then came the revelation that the President of the United States, her chief constitutional officer, was no better than a mafia don. <b>The last best hope on earth has seemingly fallen.</b></p>\n\nIt's at this pivotal moment that <b>Gerald Ford</b>, the man who wanted it the least, takes over the disillusioned, broken nation.</p>\n\nAs the exhausted country struggles to find its way between <b>reckoning, nostalgia, rage and denial</b>, Gerry Ford will have to fight tooth and nail to bring morning back to America - <b>or face the dark.</b>",
+            "display_year": "1974-1976",
+            "summary": "<h3>My God, can't they see? Can't they all see?</h3><br><br>The world is ending. America itself is ending. These Democrats, the radical liberal nuts, these kooks — they... they cannot protect it. None of them. They're irresponsible, dangerous even. They— they cannot possibly be trusted. In the modern... in the nuclear age, you cannot entrust the White House upon them. Goddamn, you can't trust them with anything.<br><br>Our time was limited. Had I not won 1972, this Republic would collapse. A crisis, a terrible crisis was coming. We... we only had 5 years left. 5 years to grow stronger, to make the best deals, I— I couldn't leave it up to chance. Up to them. These bastards would ruin what we built, what we— what we fought for.<br><br>I did it all to protect the nation. I— all in defense of... I...</b>",
             "image_url": "https://i.imgur.com/tAiHfUP.png",
             "winning_electoral_vote_number": 270,
             "advisor_url": "123",
-            "recommended_reading": "<ul>\n<li><a href=https://www.chicagotribune.com/opinion/editorials/ct-edit-chicago-tribune-biden-endorsement-20200925-lnyxsb5qvrftnjjmj3rnzj33jy-story.html>Our Case For Joe Biden</a></li>\n<li><a href=https://nationalinterest.org/feature/case-trump-166808>The Case For Trump</a></li>\n<li><a href=https://www.npr.org/2020/11/18/935730100/how-biden-won-ramping-up-the-base-and-expanding-margins-in-the-suburbs>How Biden Won: Ramping Up The Base And Expanding Margins In The Suburbs</a></li>\n<li><a href=https://www.prospectmagazine.co.uk/politics/donald-trump-joe-biden-us-election-almost-win-votes-concede>Why Did Trump Almost Win?</a></li>\n<li><a href=https://www.hoover.org/research/no-evidence-voter-fraud-guide-statistical-claims-about-2020-election>No Evidence For Voter Fraud: A Guide To Statistical Claims About The 2020 Election</a></li>\n</ul>",
+            "recommended_reading": "THE HOLY BIBLE",
             "has_visits": 1,
             "no_electoral_majority_image": "../static/images/2012-no-majority.jpg"
         }
@@ -31,7 +31,7 @@ campaignTrail_temp.temp_election_list = [
         "id": 10,
         "year": 1976,
         "is_premium": 0,
-        "display_year": "The Caretaker"
+        "display_year": "1974-1976"
     }
 ]
 
@@ -185,15 +185,15 @@ document.getElementById("header").src = "https://i.imgur.com/QN7MHZq.png";
 
 document.body.background = "https://i.imgur.com/7eEiorb.png";
 
-document.head.innerHTML += "<style>#results_container {color:#000000;} .inner_window_w_desc {background-color:#9d6f6c!important;}</style>";
+document.head.innerHTML += "<style>#results_container {color:#000000;} .inner_window_w_desc {background-color:#1f1e1a!important;}</style>";
 
 campaignTrail_temp.modBoxTheme = {
      "header_color": "#395887",
      "header_text_color": "#e8e7d7",
      "description_text_color": "#000000",
-     "description_background_color": "#e8e7d7",
-     "main_color": "#7f3c39",
-     "secondary_color": "#395887",
+     "description_background_color": "#1f1e1a",
+     "main_color": "#1f1e1a",
+     "secondary_color": "#1f1e1a",
      "ui_text_color": "#FFFFFF"
 }
 
@@ -273,33 +273,21 @@ styling.innerHTML = `
     color: #F8F8F8;
   }
 
-  #inner_window_2{
-    background-color: #DFDFD9;
-    color: #F8F8F8;
-    animation: bgFadeS1 1s ease-in-out forwards !important;
-  }
-
-  #election_description_window{
-    background-color: #1F1D19;
-    font-size:12.6px;
-    height: 317px;          
-  }
+ #inner_window_2{
+   background-color: #DFDFD9; 
+   color: #F8F8F8;
+   animation: bgFadeS1 1s ease-in-out forwards !important;
+ }
+ #election_description_window{
+   background-color: #1F1D19;
+   font-size:12.6px;
+   height: 317px;          
+ }
 
   #credits {
      position: relative;
      left:-253px;
      bottom: -90px;
-   }
-
-   #candidate_id_back {
-        position: relative;
-        bottom: -1000px;
-        opacity: 0;
-   }
-
-    #candidate_id_button {
-        position: relative;
-        left: -30px;
    }
 
       #election_image {
@@ -371,22 +359,8 @@ let z = new MutationObserver((mutationsList, observer) => {
 
 });
 
-    
-let oblong = new MutationObserver((mutationsList, observer) => {
-    let electionDescriptionWindow = document.querySelector("#election_description_window");
-
-    if (electionDescriptionWindow) {
-
-        $("#election_id_button").click();
-
-        observer.disconnect()
-
-    }
-});
-
 
 z.observe(document, { subtree: true, childList: true });
-oblong.observe(document, { subtree: true, childList: true });
 
   function addDynamicCSS() {
     var css = `
@@ -458,7 +432,7 @@ oblong.observe(document, { subtree: true, childList: true });
         .mytooltip .mytooltiptext {
             width: 240px;
             background-color: #206466;
-            color: black;
+            color: white;
             text-align: center;
             border-radius: 6px;
             padding: 10px;
