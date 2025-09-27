@@ -5571,3 +5571,196 @@ function addHeadquarterButton() {
     refButton.insertAdjacentElement('afterend', newButton);
 }
 
+e.electionScreenAppear = () => {
+    const showElectionScreen = () => {
+        e.candidate_json.forEach(candidate => {
+            if (candidate.pk === 23 && !(e.player_answers.includes(10052))) { // LBJ
+                candidate.fields.description = `
+                    <div style="max-height: 200px; overflow-y: auto;">
+                        <p><style="font-size: 1.2em;"><strong>The end is in sight now.</strong> Just one more hill to climb.</p><p> President Johnson has walked a long path, the burden is great, his hands are stained, his followers weary. The wilderness calls, a twin-headed wolf ready to devour everything you've built. But you can’t look back now. You’re almost there.</</p>
+                    </div>
+                `;
+                candidate.fields.image_url = "https://i.imgur.com/Nf4aKvB.gif"
+            } else if (candidate.pk === 55 && !(e.player_answers.includes(10052))) { // HHH
+                candidate.fields.description_as_running_mate = `
+                    <div style="max-height: 200px; overflow-y: auto;">
+                        <p><style="font-size: 1.2em;"><strong> Just look at him.</strong><p> That weepy eyed nancy boy. Is there really a man trapped inside him, or should you be swapping out his suit and tie for a nice little dress. Christ, 4 years he’s been here, and what good has he done. The liberals are sick of the sight of him, those kids would rather spit on him than vote for him and he’s too much of a sissy for those southern boys.</p><p> At this point, he’s just dead weight.</p><p>Begging to be cut loose.</p>
+                    </div>
+                `;
+                candidate.fields.image_url = "https://i.imgur.com/OO7Npbo.gif";
+            }
+        });
+    
+        let availableCandidates = e.candidate_json.filter(candidate => {
+            return candidate.pk === 23; // Example: Only LBJ is available initially
+        });
+    
+        // Generate options for available candidates
+        let candidateOptions = availableCandidates.map(candidate => `
+            <option value="${candidate.pk}">${candidate.fields.first_name} ${candidate.fields.last_name}</option>
+        `).join("");
+    
+        // Generate the HTML for candidate selection
+        let candidateHtml = `
+            <div id="candidate_form">
+                <form name="candidate">
+                    <p></p>
+                    <h3>Please select your candidate:</h3>
+                    <select name="candidate_id" id="candidate_id">
+                        ${candidateOptions}
+                    </select>
+                    <p></p>
+                </form>
+            </div>
+            <div class="person_description_window" id="candidate_description_window">
+                <div class="person_image" id="candidate_image"></div>
+                <div class="person_summary" id="candidate_summary">
+                    <p>Select a candidate to see details.</p>
+                </div>
+            </div>
+            <p>
+                <button class="person_button" id="candidate_continue_button">Continue</button>
+            </p>
+        `;
+    
+        // Create the candidate selection screen
+        let candidateScreen = document.createElement("div");
+        candidateScreen.classList.add("inner_window_w_desc");
+        candidateScreen.id = "inner_window_candidate";
+        candidateScreen.innerHTML = candidateHtml;
+    
+        changeGameDisp(true);
+    
+        gameWindow.appendChild(candidateScreen);
+    
+        // Automatically select the first candidate and display their details
+        const defaultCandidate = availableCandidates[0];
+        if (defaultCandidate) {
+            $("#candidate_id").val(defaultCandidate.pk); // Set the dropdown to the first option
+            $("#candidate_description_window").html(`
+                <div class="person_image" id="candidate_image">
+                    <img src="${defaultCandidate.fields.image_url}" width="210" height="250">
+                </div>
+                <div class="person_summary" id="candidate_summary">
+                    <ul>
+                        <li>Name: ${defaultCandidate.fields.first_name} ${defaultCandidate.fields.last_name}</li>
+                        <li>Party: ${defaultCandidate.fields.party}</li>
+                        <li>Home State: ${defaultCandidate.fields.state}</li>
+                    </ul>
+                    ${defaultCandidate.fields.description}
+                </div>
+            `);
+        }
+    
+        // Handle candidate selection changes
+        $("#candidate_id").change((_e) => {
+            _e.preventDefault();
+    
+            let selectedCandidateId = Number($("#candidate_id").val());
+            let candidate = e.candidate_json.find(c => c.pk === selectedCandidateId);
+    
+            if (candidate) {
+                $("#candidate_description_window").html(`
+                    <div class="person_image" id="candidate_image">
+                        <img src="${candidate.fields.image_url}" width="210" height="250">
+                    </div>
+                    <div class="person_summary" id="candidate_summary">
+                        <ul>
+                            <li>Name: ${candidate.fields.first_name} ${candidate.fields.last_name}</li>
+                            <li>Party: ${candidate.fields.party}</li>
+                            <li>Home State: ${candidate.fields.state}</li>
+                        </ul>
+                        ${candidate.fields.description}
+                    </div>
+                `);
+            }
+        });
+    
+        // Handle "Continue" button click
+        $("#candidate_continue_button").click((_e) => {
+            _e.preventDefault();
+    
+            let selectedCandidateId = Number($("#candidate_id").val());
+            if (!selectedCandidateId) {
+                alert("Please select a candidate before proceeding.");
+                return;
+            }
+            e.candidate_id = selectedCandidateId;
+    
+            // Remove the candidate screen and proceed to the running mate selection
+            $("#inner_window_candidate").remove();
+            showRunningMateSelection();
+        });
+    };
+
+    showCandidateSelection();
+};
+
+    function getTooltips(str) {
+        let matches = [];
+    
+        tooltipList.forEach((tooltip, index) => {
+            // Skip if tooltip has excludeIfContains and one of those phrases is found in str
+            if (tooltip.excludeIfContains) {
+                const lowerStr = str.toLowerCase();
+                const excluded = tooltip.excludeIfContains.some(phrase =>
+                    lowerStr.includes(phrase.toLowerCase())
+                );
+                if (excluded) return; // skip this tooltip
+            }
+    
+            let regex = new RegExp(`(?<=\\b|\\s|^|“)${tooltip.searchString}(?=[.,;!?]?\\b|\\s|”|$)`, 'g');
+    
+            let match;
+            while ((match = regex.exec(str)) !== null) {
+                matches.push({
+                    start: match.index + (match[0].startsWith('“') ? 1 : 0),
+                    end: match.index + match[0].length,
+                    tooltipIndex: index
+                });
+            }
+        });
+    
+        // Sort and filter overlaps
+        matches.sort((a, b) => a.start - b.start || b.end - b.start - (a.end - a.start));
+    
+        for (let i = 0; i < matches.length - 1;) {
+            if (matches[i + 1].start < matches[i].end) {
+                matches.splice(i + 1, 1);
+            } else {
+                i++;
+            }
+        }
+    
+        return matches;
+    }
+    
+    function applyTooltips(str) {
+        const matches = getTooltips(str);
+        let result = '';
+        let lastIndex = 0;
+    
+        matches.forEach(match => {
+            const tooltip = tooltipList[match.tooltipIndex];
+            result += str.slice(lastIndex, match.start);
+            result += `<span class='mytooltip'>${tooltip.searchString}<span class='mytooltiptext'>${tooltip.explanationText}</span></span>`;
+            lastIndex = match.end;
+        });
+    
+        result += str.slice(lastIndex); // Add the remainder of the original string
+        return result;
+    }
+    
+    function applyTooltipsToObject(obj) {
+        for (let key in obj) {
+            if (typeof obj[key] === 'string') {
+                obj[key] = applyTooltips(obj[key]);
+            } else if (typeof obj[key] === 'object') {
+                applyTooltipsToObject(obj[key]); // Recursive call
+            }
+        }
+    }
+    
+    applyTooltipsToObject(campaignTrail_temp.questions_json);
+    applyTooltipsToObject(campaignTrail_temp.answers_json);
+    applyTooltipsToObject(campaignTrail_temp.answer_feedback_json);    

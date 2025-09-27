@@ -443,8 +443,7 @@ oblong.observe(document, { subtree: true, childList: true });
         }
   
         .inner_window_question h3 .mytooltip{
-            background-color: "#32a4a8";
-            color: black;
+            background-color: #206466;
             font-style: italic;
             padding: 2px; 
         }
@@ -453,12 +452,12 @@ oblong.observe(document, { subtree: true, childList: true });
             position: relative;
             display: inline-block;
             cursor: pointer;
-            background-color: #32a4a8;
+            background-color: #206466;
         }
   
         .mytooltip .mytooltiptext {
             width: 240px;
-            background-color: #32a4a8;
+            background-color: #206466;
             color: black;
             text-align: center;
             border-radius: 6px;
