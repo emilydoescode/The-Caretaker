@@ -15,7 +15,7 @@ campaignTrail_temp.election_json = [
         "fields": {
             "year": 1976,
             "display_year": "1974-1976",
-            "summary": "<h3>My God, can't they see? Can't they all see?</h3><br><br>The world is ending. America itself is ending. These Democrats, the radical liberal nuts, these kooks — they... they cannot protect it. None of them. They're irresponsible, dangerous even. They— they cannot possibly be trusted. In the modern... in the nuclear age, you cannot entrust the White House upon them. Goddamn, you can't trust them with anything.<br><br>Our time was limited. Had I not won 1972, this Republic would collapse. A crisis, a terrible crisis was coming. We... we only had 5 years left. 5 years to grow stronger, to make the best deals, I— I couldn't leave it up to chance. Up to them. These bastards would ruin what we built, what we— what we fought for.<br><br>I did it all to protect the nation. I— all in defense of... I...</b>",
+            "summary": "<h3>My God, can't they see? Can't they all see?</h3><br><br>The world is ending. <b>America itself</b> is ending. These Democrats, the radical liberal nuts, these kooks — they... they cannot protect it. None of them. They're irresponsible, dangerous even. They— they cannot possibly be trusted. In the modern... in the nuclear age, you cannot entrust the White House upon them. Goddamn, you can't trust them with anything.<br><br>Our time was limited. Had I not won 1972, this Republic would collapse. A crisis, a terrible crisis was coming. We... we only had 5 years left. 5 years to grow stronger, to make the best deals, I— I couldn't leave it up to chance. Up to <b>them</b>. These bastards would ruin what we built, what we— what we fought for.<br><br>I did it all to protect the nation. I— all in defense of... I...<br><br>I...<br></b>",
             "image_url": "https://i.imgur.com/tAiHfUP.png",
             "winning_electoral_vote_number": 270,
             "advisor_url": "123",
@@ -38,7 +38,7 @@ campaignTrail_temp.temp_election_list = [
 campaignTrail_temp.credits = "<button onclick='credits()'>The Caretakers</button>"
 
 credits = function() {
-  credits = [ "Losos : Lead, Design, Writing, Code", "Emmy : Code, Assets, Music, Writing", "GeneralDoggo: Design, Assets", "Kyiv_Worker: Design", "Ariandel: Design"]
+  credits = [ "Losos: Lead, Design, Writing, Code", "Emmy: Code, Assets, Music, Writing", "GeneralDoggo: Design, Assets", "Kyiv_Worker: Design", "Ariandel: Design"]
   text = "CREDITS:\n\n"
   for (i in credits) {
       text += credits[i] + "\n"
