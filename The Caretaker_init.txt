@@ -82,7 +82,7 @@ campaignTrail_temp.candidate_json = [
             "party": "Republican Party",
             "state": "California",
             "priority": 1,
-            "description": "<h3><b>Enough of these lies.</h3></b></p>\n\n<b>The charade is finally nearing its end.</b> The story of Tricky Dick, the most bloodthirsty and fascistic president in the nation's history, is almost over. Nixon's own fear, his own burning feelings of paranoia and resentment have become his undoing. How ironic.</p>\n\nBut as always, he is the last to acknowledge his fall. He still believes that he can still enter the books of history fondly — pull off another miraculous salvation of himself. The cornered beast he is, he will consider just about anything — from <b>resignation</b> in a futile attempt to become a martyr, to doing away with the pretense of constitutionalism <b>entirely</b>.</p>\n\nOnly God knows what will come out next from the raging inferno that is the Oval Office — <b>but whatever it is, it will define this nation.</b>",
+            "description": "<h3><b>Enough of these lies.</h3></b></p>\n\n<b>The charade is finally nearing its end.</b> The story of Tricky Dick, the most bloodthirsty and fascistic president in the nation's history, is almost over. Nixon's own fear, his own burning feelings of paranoia and resentment have become his undoing. How ironic.</p>\n\nBut as always, he is the last to acknowledge his fall. He remains in belief that he can still enter the books of history fondly — pull off another miraculous salvation of himself. The cornered beast he is, he will consider just about anything — from <b>resignation</b> in a futile attempt to become a martyr, to doing away with the pretense of constitutionalism <b>entirely</b>.</p>\n\nOnly God knows what will come out next from the raging inferno that is the Oval Office — <b>but whatever it is, it will define this nation.</b>",
             "color_hex": "#7c7cd0",
             "secondary_color_hex": null,
             "is_active": 1,
@@ -125,7 +125,7 @@ campaignTrail_temp.running_mate_json = [
         "model": "campaign_trail.running_mate",
         "pk": 109261,
         "fields": {
-            "candidate": 1001,
+            "candidate": 92,
             "running_mate": 2002
         }
     }
@@ -135,7 +135,7 @@ campaignTrail_temp.opponents_default_json = [
     {
         "election": 10,
         "candidates": [
-            1001
+            92
         ]
     }
 ]
@@ -144,7 +144,7 @@ campaignTrail_temp.opponents_weighted_json = [
     {
         "election": 10,
         "candidates": [
-            1001
+            92
         ]
     }
 ]
