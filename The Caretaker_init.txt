@@ -74,19 +74,19 @@ campaignTrail_temp.global_parameter_json = [
 campaignTrail_temp.candidate_json = [
     {
         "model": "campaign_trail.candidate",
-        "pk": 92,
+        "pk": 91,
         "fields": {
-            "first_name": "Richard",
-            "last_name": "Nixon",
+            "first_name": "Mr",
+            "last_name": "Democrats",
             "election": 10,
-            "party": "Republican Party",
-            "state": "California",
+            "party": "Turbo Team",
+            "state": "Idaho",
             "priority": 1,
-            "description": "<h3><b>Enough of these lies.</h3></b></p>\n\n<b>The charade is finally nearing its end.</b> The story of Tricky Dick, the most bloodthirsty and fascistic president in the nation's history, is almost over. Nixon's own fear, his own burning feelings of paranoia and resentment have become his undoing. How ironic.</p>\n\nBut as always, he is the last to acknowledge his fall. He remains in belief that he can still enter the books of history fondly — pull off another miraculous salvation of himself. The cornered beast he is, he will consider just about anything — from <b>resignation</b> in a futile attempt to become a martyr, to doing away with the pretense of constitutionalism <b>entirely</b>.</p>\n\nOnly God knows what will come out next from the raging inferno that is the Oval Office — <b>but whatever it is, it will define this nation.</b>",
-            "color_hex": "#7c7cd0",
+            "description": "<p>Put description here</p>",
+            "color_hex": "#0000FF",
             "secondary_color_hex": null,
-            "is_active": 1,
-            "image_url": "https://files.catbox.moe/rd4quk.png",
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/candidateexample.png",
             "electoral_victory_message": "This guy wins!",
             "electoral_loss_message": "This guy loses!",
             "no_electoral_majority_message": "We all win?",
@@ -97,11 +97,11 @@ campaignTrail_temp.candidate_json = [
     },
     {
         "model": "campaign_trail.candidate",
-        "pk": 2002,
+        "pk": 2001,
         "fields": {
             "first_name": "Running",
             "last_name": "Mate",
-            "election": 20,
+            "election": 10,
             "party": "Turbo Team",
             "state": "Idaho",
             "priority": 1,
@@ -117,13 +117,67 @@ campaignTrail_temp.candidate_json = [
             "candidate_score": 1,
             "running_mate": true
         }
+    },
+    {
+            "model": "campaign_trail.candidate",
+            "pk": 92,
+            "fields": {
+                "first_name": "Richard",
+                "last_name": "Nixon",
+                "election": 10,
+                "party": "Republican Party",
+                "state": "California",
+                "priority": 1,
+                "description": "<h3><b>Enough of these lies.</h3></b></p>\n\n<b>The charade is finally nearing its end.</b> The story of Tricky Dick, the most bloodthirsty and fascistic president in the nation's history, is almost over. Nixon's own fear, his own burning feelings of paranoia and resentment have become his undoing. How ironic.</p>\n\nBut as always, he is the last to acknowledge his fall. He remains in belief that he can still enter the books of history fondly — pull off another miraculous salvation of himself. The cornered beast he is, he will consider just about anything — from <b>resignation</b> in a futile attempt to become a martyr, to doing away with the pretense of constitutionalism <b>entirely</b>.</p>\n\nOnly God knows what will come out next from the raging inferno that is the Oval Office — <b>but whatever it is, it will define this nation.</b>",
+                "color_hex": "#7c7cd0",
+                "secondary_color_hex": null,
+                "is_active": 1,
+                "image_url": "https://files.catbox.moe/rd4quk.png",
+                "electoral_victory_message": "This guy wins!",
+                "electoral_loss_message": "This guy loses!",
+                "no_electoral_majority_message": "We all win?",
+                "description_as_running_mate": null,
+                "candidate_score": 1,
+                "running_mate": false
+            }
+        },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 2002,
+        "fields": {
+            "first_name": "Mr",
+            "last_name": "Mater",
+            "election": 10,
+            "party": "Republican Party",
+            "state": "Michigan",
+            "priority": 1,
+            "description": "<p>Put description here</p>",
+            "color_hex": "#0000FF",
+            "secondary_color_hex": null,
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/candidateexample.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": null,
+            "candidate_score": 1,
+            "running_mate": true
+        }
     }
 ]
 
 campaignTrail_temp.running_mate_json = [
     {
         "model": "campaign_trail.running_mate",
-        "pk": 109261,
+        "pk": 129271,
+        "fields": {
+            "candidate": 91,
+            "running_mate": 2001
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 157546,
         "fields": {
             "candidate": 92,
             "running_mate": 2002
@@ -135,6 +189,7 @@ campaignTrail_temp.opponents_default_json = [
     {
         "election": 10,
         "candidates": [
+            91,
             92
         ]
     }
@@ -144,10 +199,13 @@ campaignTrail_temp.opponents_weighted_json = [
     {
         "election": 10,
         "candidates": [
+            91,
             92
         ]
     }
 ]
+
+
 
 jet_data = {
     "headerColor": "#395887",
@@ -324,6 +382,33 @@ styling.innerHTML = `
           
         }
 
+    .tooltip {
+            position: absolute; 
+            visibility: hidden; 
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0s 0.3s; 
+            pointer-events: none; 
+        }
+
+    .tooltip-container:hover .tooltip {
+        pointer-events: auto; 
+        transition-delay: 0s; 
+        background-color: #201F1A;
+        background-Image: url("https://files.catbox.moe/x6tuop.png");
+        background-size: cover; 
+        font-family: Arial, sans-serif !important;
+        font-style: normal !important;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left; 
+        line-height: 1.2; 
+    }
+
+    .tooltip img {
+        display: block; 
+        margin: 0 auto -13px;
+        border: 1px solid #C9C9C9;
+    }
+
    @keyframes pulseGlow {
     0% {
       text-shadow: 0px 0px 5px #478F9C, 0px 0px 10px darkblue, 0px 0px 10px #478F9C;
@@ -373,6 +458,32 @@ z.observe(document, { subtree: true, childList: true });
         background-color: lightskyblue;
     }
     
+    .tooltip-container {
+      opacity: 1;
+      transition-delay: 0.5s;
+      border-bottom: 1px dotted blue; 
+    }
+    
+    .tooltip {
+        position: absolute;
+        background-color: #333;
+        color: #fff;
+        padding: 8px;
+        border-radius: 6px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 1;
+        max-width: 200px; 
+        text-align: center; 
+        left: 61%; 
+        top: 4%; 
+        transform: translate(-50px, 0px); 
+    }
+    
+    .tooltip img {
+        max-width: 50%; 
+    }
+
     .mytooltip {
         position: relative;
         display: inline-block;
