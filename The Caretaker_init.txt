@@ -74,7 +74,7 @@ campaignTrail_temp.global_parameter_json = [
 campaignTrail_temp.candidate_json = [
     {
         "model": "campaign_trail.candidate",
-        "pk": 1001,
+        "pk": 92,
         "fields": {
             "first_name": "Richard",
             "last_name": "Nixon",
