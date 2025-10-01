@@ -4715,12 +4715,13 @@ function changechart() {
         if (!overallthing.includes('class="tooltip"')) {
             //REPUBLICAN
             overallthing = overallthing.replace("Nixon", "<span class='tooltip-container'>Nixon<span class='tooltip'><img src=https://files.catbox.moe/ms90oh.png><br><p style=\"font-size: 13px; margin: 2px 0;\">Disgraced President</p><p style=\"font-size: 15px; margin: 2px 0;\">Richard Nixon</p><span style=\"font-size: 12px; margin: 2px 0;\">They wanted to try killing me, getting me out of power as soon as possible. They don't understand why I had to do it. They don't- </span></span></span>");
+            overallthing = overallthing.replace("Ford", "<span class='tooltip-container'>Ford<span class='tooltip'><img src=https://files.catbox.moe/mf7hl4.png><br><p style=\"font-size: 13px; margin: 2px 0;\">President</p><p style=\"font-size: 15px; margin: 2px 0;\">Gerald Ford</p><span style=\"font-size: 12px; margin: 2px 0;\">They didn't elect you, for president or for vice-president, but you are here anyways. From the ashes a grand party, a new you must emerge, be it as Judas, as janitor, or as Jesus.</span></span></span>");
             //DEMS
             if(Nominee == "Nixon"){
                 overallthing = overallthing.replace("Democrats", "<span class='tooltip-container'>Democrats<span class='tooltip'><img src=https://files.catbox.moe/iabf9x.png><br><p style=\"font-size: 13px; margin: 2px 0;\">The Enemy</p><p style=\"font-size: 15px; margin: 2px 0;\">The Democratic Party</p><span style=\"font-size: 12px; margin: 2px 0;\">We tried so hard to protect this civilization—was it worth anything? Where did it all go wrong? Where did I fail? Everything we did, everything I fought for, all of this. Is anyone here to listen to me again?</span></span></span>");
             }
             else if(Nominee == "Ford"){
-                overallthing = overallthing.replace("Democrats", "<span class='tooltip-container'>Kennedy<span class='tooltip'><img src=https://i.imgur.com/bmepqaL.png><br><p style=\"font-size: 13px; margin: 2px 0;\">President</p><p style=\"font-size: 15px; margin: 2px 0;\">Robert Kennedy</p><span style=\"font-size: 12px; margin: 2px 0;\">A good man, sure. Whatever needs to be said to keep things cordial.</span></span></span>");
+                overallthing = overallthing.replace("Democrats", "<span class='tooltip-container'>Democrats<span class='tooltip'><img src=https://files.catbox.moe/iabf9x.png><br><p style=\"font-size: 13px; margin: 2px 0;\">Official Opposition</p><p style=\"font-size: 15px; margin: 2px 0;\">The Democratic Party</p><span style=\"font-size: 12px; margin: 2px 0;\">We tried so hard to protect this civilization—was it worth anything? Where did it all go wrong? Where did I fail? Everything we did, everything I fought for, all of this. Is anyone here to listen to me again?</span></span></span>");
             }
             document.getElementById("overall_result").innerHTML = overallthing;
             initializeTooltips();
@@ -4885,7 +4886,7 @@ cyoAdventure = function(a) {
         92, 
         "Gerald R.",
         "Ford",
-        "https://files.catbox.moe/9182t4.png", 
+        "https://files.catbox.moe/bj2q3x.png", 
         "<div style=\"max-height: 200px; overflow-y: auto;\"><p><b style=\"font-size: 1.2em;\"><strong>It feels like fate</strong></b> doesn’t it? When Oswald fired those shots from the book depository in Dealey Plaza, the country lost more than just its 35th President. It lost its hope. And when President Johnson saw fit to co-opt his martyred predecessor’s agenda and warp it for the sake of his own ego, that hope seemed beyond saving.<br><br>But now, as that President drowns in a mess of his own making, Robert Kennedy—the inheritor of that legacy—has seized the opportunity to course correct, to expunge the dark stain of these last years, to rewrite history.<br><br>Or so he tells himself.<br><br>",             
         "Michigan",
         "Republican",

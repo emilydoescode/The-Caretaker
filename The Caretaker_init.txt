@@ -440,7 +440,7 @@ styling.innerHTML = `
         pointer-events: auto; 
         transition-delay: 0s; 
         background-color: #201F1A;
-        background-Image: url("https://files.catbox.moe/x6tuop.png");
+        background-Image: url("https://files.catbox.moe/5j5zm2.png");
         background-size: cover; 
         font-family: Arial, sans-serif !important;
         font-style: normal !important;
