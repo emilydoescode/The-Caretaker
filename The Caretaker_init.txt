@@ -15,7 +15,7 @@ campaignTrail_temp.election_json = [
         "fields": {
             "year": 1976,
             "display_year": "1974-1976",
-            "summary": "<h3>My God, can't they see? Can't they all see?</h3><br><br>The world is ending. <b>America itself</b> is ending. These Democrats, the radical liberal nuts, these kooks — they... they cannot protect it. None of them. They're irresponsible, dangerous even. They— they cannot possibly be trusted. In the modern... in the nuclear age, you cannot entrust the White House upon them. Goddamn, you can't trust them with anything.<br><br>Our time was limited. Had I not won 1972, this Republic would collapse. A crisis, a terrible crisis was coming. We... we only had 5 years left. 5 years to grow stronger, to make the best deals, I— I couldn't leave it up to chance. Up to <b>them</b>. These bastards would ruin what we built, what we— what we fought for.<br><br>I did it all to protect the nation. I— all in defense of... I...<br><br>I...<br></b>",
+            "summary": "<p><h3>My God, can't they see? Can't they all see?</h3><br><br>The world is ending. <b>America itself</b> is ending. These Democrats, the radical liberal nuts, these kooks — they... they cannot protect it. None of them. They're irresponsible, dangerous even. They— they cannot possibly be trusted. In the modern... in the nuclear age, you cannot entrust the White House upon them. Goddamn, you can't trust them with anything.<br><br>Our time was limited. Had I not won 1972, this Republic would collapse. A crisis, a terrible crisis was coming. We... we only had 5 years left. 5 years to grow stronger, to make the best deals, I— I couldn't leave it up to chance. Up to <b>them</b>. These bastards would ruin what we built, what we— what we fought for.<br><br>I did it all to protect the nation. I— all in defense of... I...<br><br>I...<br></b><p>",
             "image_url": "https://i.imgur.com/tAiHfUP.png",
             "winning_electoral_vote_number": 270,
             "advisor_url": "123",
@@ -62,6 +62,7 @@ campaignTrail_temp.global_parameter_json = [
             "issue_stance_4_max": 0.125,
             "issue_stance_5_max": 0.3,
             "issue_stance_6_max": 0.71,
+            "issue_stance_7_max": 0.9,
             "global_variance": 0.01,
             "state_variance": 0.005,
             "question_count": 30,
@@ -125,7 +126,7 @@ campaignTrail_temp.candidate_json = [
                 "first_name": "Richard",
                 "last_name": "Nixon",
                 "election": 10,
-                "party": "Republican Party",
+                "party": "Republican",
                 "state": "California",
                 "priority": 1,
                 "description": "<h3><b>Enough of these lies.</h3></b></p>\n\n<b>The charade is finally nearing its end.</b> The story of Tricky Dick, the most bloodthirsty and fascistic president in the nation's history, is almost over. Nixon's own fear, his own burning feelings of paranoia and resentment have become his undoing. How ironic.</p>\n\nBut as always, he is the last to acknowledge his fall. He remains in belief that he can still enter the books of history fondly — pull off another miraculous salvation of himself. The cornered beast he is, he will consider just about anything — from <b>resignation</b> in a futile attempt to become a martyr, to doing away with the pretense of constitutionalism <b>entirely</b>.</p>\n\nOnly God knows what will come out next from the raging inferno that is the Oval Office — <b>but whatever it is, it will define this nation.</b>",
@@ -180,6 +181,14 @@ campaignTrail_temp.running_mate_json = [
         "pk": 157546,
         "fields": {
             "candidate": 92,
+            "running_mate": 2002
+        }
+    },
+    {
+        "model": "campaign_trail.running_mate",
+        "pk": 157544,
+        "fields": {
+            "candidate": 93,
             "running_mate": 2002
         }
     }
@@ -342,6 +351,28 @@ styling.innerHTML = `
    height: 317px;          
  }
 
+ #election_summary{
+   text-align: left;
+   width:auto;
+   z-index: 0;
+   color: #DFDFD9;
+   position: absolute; 
+   left:400px;
+   top: 60px;
+   text-shadow: 
+     0px 0px 6px rgba(32, 29, 26, 0.3),
+     0px 0px 8px rgba(32, 29, 26, 0.8),
+     0px 0px 1px rgba(32, 29, 26, 1); 
+ }
+ #election_summary p {
+   font-size: 14px;
+   width: 645px;
+   margin-left: -400px;
+ }
+ #election_id_button {
+    position: relative;
+    left: 150px;
+ }
   #credits {
      position: relative;
      left:-253px;
@@ -375,6 +406,21 @@ styling.innerHTML = `
           outline:none;
         }
         #candidate_image img{
+          width: 274px;
+          height: 282px;
+          padding: 1px 1px; 
+          outline: 1px solid #C9C9C9;
+          
+        }
+
+        #running_mate_image{
+          width: 274px;
+          height: 282px;
+          margin-right: 20px;
+          border:none;
+          outline:none;
+        }
+        #running_mate_image img{
           width: 274px;
           height: 282px;
           padding: 1px 1px; 
@@ -631,6 +677,10 @@ playNext() {
   this.currentSongIndex = (this.currentSongIndex + 1) % this.songs.length;
 }
 
+playNextSpecial() {
+  this.currentSongIndex = (this.currentSongIndex + 2) % this.songs.length;
+}
+
 playPrevious() {
   this.currentSongIndex = (this.currentSongIndex - 1 + this.songs.length) % this.songs.length;
 }
@@ -727,9 +777,16 @@ const song1 = new Song(
   "https://files.catbox.moe/oaxq8x.mp3"
 );
 
+const song2 = new Song(
+  "Miami 2017",
+  "Billy Joel",
+  "https://files.catbox.moe/boauzu.png",
+  "https://files.catbox.moe/to36xa.mp3"
+);
+
 
 playlist.addSong(song1);
-
+playlist.addSong(song2);
 
 const playerContainer = document.createElement("div");
 playerContainer.id = "player";
