@@ -15,8 +15,9 @@ campaignTrail_temp.election_json = [
         "fields": {
             "year": 1976,
             "display_year": "1974-1976",
+            "site_description": "<strong>The Caretaker</strong><br><b><small>Dawn</small></b><br><br><b>The American Dream is on its deathbed.</b><br><br>Political violence and terror shake the country. Crime and poverty reign in the cities. In 1973, for the first time in history, America lost a war. Then came the revelation that the President of the United States, her chief constitutional officer, was no better than a mafia don. <b>The last best hope on earth has seemingly fallen.</b><br><br>It's at this pivotal moment that <b>Gerald Ford</b>, the man who wanted it the least, takes over the disillusioned, broken nation.</p>\n\nAs the exhausted country struggles to find its way between <b>reckoning, nostalgia, rage and denial</b>, Gerry Ford will have to fight tooth and nail to bring morning back to America - <b>or face the dark.</b>",
             "summary": "<p><h3>My God, can't they see? Can't they all see?</h3><br><br>The world is ending. <b>America itself</b> is ending. These Democrats, the radical liberal nuts, these kooks — they... they cannot protect it. None of them. They're irresponsible, dangerous even. They— they cannot possibly be trusted. In the modern... in the nuclear age, you cannot entrust the White House upon them. Goddamn, you can't trust them with anything.<br><br>Our time was limited. Had I not won 1972, this Republic would collapse. A crisis, a terrible crisis was coming. We... we only had 5 years left. 5 years to grow stronger, to make the best deals, I— I couldn't leave it up to chance. Up to <b>them</b>. These bastards would ruin what we built, what we— what we fought for.<br><br>I did it all to protect the nation. I— all in defense of... I...<br><br>I...<br></b><p>",
-            "image_url": "https://i.imgur.com/tAiHfUP.png",
+            "image_url": "https://files.catbox.moe/snug4k.png",
             "winning_electoral_vote_number": 270,
             "advisor_url": "123",
             "recommended_reading": "THE HOLY BIBLE",
@@ -25,6 +26,17 @@ campaignTrail_temp.election_json = [
         }
     }
 ]
+
+campaignTrail_temp.modBoxTheme = {
+  "header_color": "#485284",
+  "header_image_url": "https://files.catbox.moe/nx2c4o.png",
+  "header_text_color": "#ffffff",
+  "description_text_color": "#000000",
+  "description_background_color": "#ffffff",
+  "main_color": "#3b436a",
+  "secondary_color": "#2f3864",
+  "ui_text_color": "#FFFFFF"
+}
 
 campaignTrail_temp.temp_election_list = [
     {
@@ -359,6 +371,7 @@ styling.innerHTML = `
    position: absolute; 
    left:400px;
    top: 60px;
+   padding-right:50px;
    text-shadow: 
      0px 0px 6px rgba(32, 29, 26, 0.3),
      0px 0px 8px rgba(32, 29, 26, 0.8),
@@ -367,7 +380,7 @@ styling.innerHTML = `
  #election_summary p {
    font-size: 14px;
    width: 645px;
-   margin-left: -400px;
+   margin-left: -420px;
  }
  #election_id_button {
     position: relative;
@@ -500,9 +513,6 @@ z.observe(document, { subtree: true, childList: true });
       cursor:default;
     }
     
-    .inner_window_question h3 .mytooltip{
-        background-color: lightskyblue;
-    }
     
     .tooltip-container {
       opacity: 1;
@@ -525,22 +535,22 @@ z.observe(document, { subtree: true, childList: true });
         top: 4%; 
         transform: translate(-50px, 0px); 
     }
-    
     .tooltip img {
-        max-width: 50%; 
+        max-width: 50%;
+         
     }
 
     .mytooltip {
         position: relative;
         display: inline-block;
         cursor: pointer;
-        background-color: #d8dee8;
+        background-color: #0a0908;
     }
     
     .mytooltip .mytooltiptext {
         width: 240px;
-        background-color: #d8dee8;
-        color: black;
+        background-color: #0a0908;
+        color: white;
         text-align: center;
         border-radius: 6px;
         padding: 10px;
@@ -574,49 +584,11 @@ z.observe(document, { subtree: true, childList: true });
         }
   
         .inner_window_question h3 .mytooltip{
-            background-color: #206466;
+            background-color: #035e7b;
             font-style: italic;
             padding: 2px; 
         }
   
-        .mytooltip {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-            background-color: #206466;
-        }
-  
-        .mytooltip .mytooltiptext {
-            width: 240px;
-            background-color: #206466;
-            color: white;
-            text-align: center;
-            border-radius: 6px;
-            padding: 10px;
-            position: absolute;
-            z-index: 99;
-            bottom: 20%;
-            left: 20%;
-            margin-left: -90px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            border: 1px solid black;
-            pointer-events: none;
-            font-size: 13px !important;
-            line-height: 1.5em !important;
-            font-weight: normal !important;
-            font-style: normal !important;
-        }
-  
-        .mytooltip .mytooltiptext img {
-            max-width: 240px;
-            height: auto;
-        }
-  
-        .mytooltip:hover .mytooltiptext {
-            opacity: 1;
-            transition-delay: 0.5s;
-        }
     `;
   
     var styleElem = document.createElement('style');
@@ -632,7 +604,7 @@ z.observe(document, { subtree: true, childList: true });
 
   tooltipList = [
     // Q1
-    {searchString: "Bob Dole", explanationText: "<img src=https://i.imgur.com/BcP7HEt.gif> Extremely Overrated!"},
+    {searchString: "Bob Dole", explanationText: "<img src=https://cdn.discordapp.com/attachments/1419444230165889115/1422827400605204490/Leonid_Brezhnev.png?ex=68debf87&is=68dd6e07&hm=d268fdb3b42fd1bda23698915314f4314b747a2ccf1ba9b776c7786018e4c941&> Extremely Overrated!"},
     ];
 
 class Song {
