@@ -44,7 +44,7 @@ campaignTrail_temp.answers_json = [
             "question": 409,
             "description": "nuh uh."
         }
-    }
+    },
 ]
 
 campaignTrail_temp.states_json = [
@@ -4458,8 +4458,8 @@ campaignTrail_temp.answer_feedback_json = [
         "model": "campaign_trail.answer_feedback",
         "pk": 1036,
         "fields": {
-            "answer": 3588,
-            "candidate": 91,
+            "answer": 3545,
+            "candidate": 92,
             "answer_feedback": "This is a good liberal answer, but perhaps a bit too liberal."
         }
     }
@@ -4469,10 +4469,10 @@ campaignTrail_temp.answer_feedback_json = [
 
 campaignTrail_temp.jet_data = [{
     "nicknames": {
-        "1001": "Nixon",
-        "1002": "Democrats",
-        "1003": "Hippies",
-        "1004": "Bumpkins"
+        "92": "Nixon",
+        "91": "Democrats",
+        "93": "Hippies",
+        "94": "Bumpkins"
     }
 }
 ]
@@ -4482,6 +4482,117 @@ campaignTrail_temp.jet_data = [{
 e.cyoa = true;
 
 e = campaignTrail_temp;
+
+function ctsAchievement(achievement, difficultyChecker = true){
+    if ((difficultyChecker && campaignTrail_temp.difficulty_level_multiplier<=1)||!difficultyChecker)
+        if(campaignTrail_temp.CTS){
+        unlockAchievement(achievement);
+    }
+}
+
+function unlockAchievement(name) {
+  const ach = findAchievementByName(name);
+
+  if (ach == null) {
+    console.log("There is no achievement with the name '" + name + "'");
+    return;
+  }
+
+  if (cheatsActive && ach.cannotBeCheated) {
+    console.log(`Would unlock '${name}' but won't because cheating!`);
+    return;
+  }
+
+  if (unlockedAch[name] == null) {
+    //alert("ACHIEVEMENT UNLOCKED: " + name);
+  }
+
+  showAchievement(name);
+  unlockedAch[name] = ach;
+  localStorage.setItem("unlockedAch", JSON.stringify(unlockedAch));
+  addAllAchievements();
+}
+
+function showAchievement(achievementKey) {
+  const achievement = campaignTrail_temp.achievements[achievementKey];
+  if(achievementKey == "Kenosis<br>⠀"){
+    var sound = new Audio('https://audio.jukehost.co.uk/LfMOoqTNbyGgxqCEVeC7yN87gywDlI27');   
+    sound.volume = 0.3;
+    sound.play();
+  }
+
+  // Create the achievement box
+  const box = document.createElement('div');
+  box.style.position = 'fixed';
+  box.style.right = '20px';
+  box.style.backgroundColor = '#FFFFFF';
+  box.style.color = 'white';
+  box.style.width = '250px'; 
+  box.style.height = '110px'; 
+  box.style.textAlign = 'center'; 
+  box.style.padding = '10px 10px';
+  box.style.borderRadius = '8px';
+  box.style.fontSize = '18px';
+  box.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+  box.style.opacity = '0';
+  box.style.transition = 'opacity 1s ease-in-out';
+  box.style.zIndex = '1000';
+  box.style.display = 'flex';
+  box.style.alignItems = 'center';
+  box.style.gap = '15px';
+  
+  box.style.backgroundImage = 'url("https://files.catbox.moe/u95i4x.png")';
+  box.style.backgroundPosition = 'center';
+  box.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)'; 
+
+  const existingBoxes = document.querySelectorAll('.achievement-popup');
+  const offset = existingBoxes.length * 132; 
+  box.style.bottom = `${20 + offset}px`;
+
+  const img = document.createElement('img');
+  img.src = achievement.image;
+  img.alt = achievementKey;
+  img.style.width = '100px';  
+  img.style.height = '100px';
+
+  const text = document.createElement('div');
+  const cleanedAchievementKey = achievementKey.replace('<br>⠀', '');
+  text.innerHTML = `<strong>${cleanedAchievementKey}</strong>`;
+  text.style.textAlign = 'center'; 
+  text.style.width = '100%'; 
+
+  box.appendChild(img);
+  box.appendChild(text);
+
+  box.classList.add('achievement-popup');
+
+  document.body.appendChild(box);
+  
+
+  // Fade in
+  setTimeout(() => {
+    box.style.opacity = '1';
+  }, 10);
+
+  // Fade out and remove after 4 seconds
+  setTimeout(() => {
+    box.style.opacity = '0';
+    box.addEventListener('transitionend', () => {
+      box.remove();
+      adjustPopupPositions(); // Adjust remaining boxes when one is removed
+    });
+  }, 4000);
+}
+
+function adjustPopupPositions() {
+    setTimeout(() => {
+        const boxes = document.querySelectorAll('.achievement-popup');
+        const gap = 300;
+        boxes.forEach((box, index) => {
+            box.style.bottom = `${20 + index * gap}px`;
+        });
+    }, 10);
+}
 
 e.noCounter = 0;
 var songChange = 0;
@@ -4874,6 +4985,7 @@ cyoAdventure = function(a) {
 
     if (e.player_answers.includes(3545) || e.player_answers.includes(3546) ) {
         NixonBye = true;
+        ctsAchievement("Quiet Quitting"); 
     }
 
   if (e.noCounter == 1 && !vpSwitcherTriggered) {
@@ -4911,6 +5023,15 @@ cyoAdventure = function(a) {
         );
     }
 
+
+
+}
+
+function switcheroo1() {
+    var id = e.candidate_json.map(p=>p.pk).indexOf(91)
+    e.candidate_json[id].fields.first_name = "Jimmy"
+    e.candidate_json[id].fields.last_name = "Carter" 
+    e.candidate_json[id].fields.color_hex = "#4E809C" 
 }
 
 e.vpSwitcher = () => {
@@ -5455,9 +5576,12 @@ const menuItemsA = [
 ]
 
 const menuItemsB = [
-    { photo: 'https://i.imgur.com/EqFrWEp.png', name: 'Al Gore', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'GORE_B'},
-    { photo: 'https://i.imgur.com/EqFrWEp.png', name: 'Al Gore', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'AAA_B'},
-    { photo: 'https://i.imgur.com/EqFrWEp.png', name: 'Al Gore', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'AA_B'}
+    { photo: 'https://files.catbox.moe/364s27.png', name: 'Edmund Muskie', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'MUSKIE_B'},
+    { photo: 'https://files.catbox.moe/hn2cbj.png', name: 'Jerry Brown', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'BROWN_B'},
+    { photo: 'https://files.catbox.moe/yzljfl.png', name: 'Hubert Humphrey', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'HUMPHREY_B'},
+    { photo: 'https://files.catbox.moe/ym4538.png', name: 'Ted Kennedy', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'KENNEDY_B'},
+    { photo: 'https://files.catbox.moe/3qta69.png', name: 'George Wallace', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'WALLACE_B'},
+    { photo: 'https://files.catbox.moe/k0ko42.png', name: 'Jimmy Carter', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'CARTER_B'}
 ]
 
 
@@ -5578,7 +5702,7 @@ function openSurrogates() {
         popOutMenu.style.backgroundColor = '#fff';
         popOutMenu.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
         popOutMenu.style.zIndex = '1000';
-        popOutMenu.style.backgroundImage = 'url("https://files.catbox.moe/0w75us.png")';
+        popOutMenu.style.backgroundImage = 'url("https://files.catbox.moe/1dh1fg.png")';
         popOutMenu.style.backgroundSize = 'cover';
         popOutMenu.style.backgroundPosition = 'center';
         popOutMenu.style.alignItems = 'center';     
@@ -5617,7 +5741,7 @@ function openSurrogates() {
 
         const ovsubtxt = document.createElement('p');
         ovsubtxt.innerHTML = overviewtxt;
-        ovsubtxt.style.color = "#ffffff"; 
+        ovsubtxt.style.color = "#000000"; 
         ovsubtxt.style.textAlign = 'left';
         ovsubtxt.style.position = "absolute";
         ovsubtxt.style.lineHeight = '1.3';
@@ -5724,7 +5848,7 @@ function openSurrogates() {
             text.style.mozOsxFontSmoothing = "none"; 
             text.style.fontWeight = "450"; 
             text.style.position = "absolute"; 
-            text.style.marginLeft = "-7px";    
+            text.style.marginLeft = "-5px";    
             text.style.marginTop = "29px";    
 
             textAndButton.appendChild(text);
@@ -5739,7 +5863,25 @@ function openSurrogates() {
             const menuItemB = document.createElement('div');
             menuItemB.style.display = 'flex';
             menuItemB.style.alignItems = 'flex-start';
-            menuItemB.style.backgroundImage = 'url("https://files.catbox.moe/eafu25.png")';
+            if(item.id == "MUSKIE_B"){
+                  menuItemB.style.background = 'url("https://files.catbox.moe/hcihdr.png")';
+              }
+              if(item.id == "BROWN_B"){
+                  menuItemB.style.background = 'url("https://files.catbox.moe/zmlxc8.png")';
+              }
+              if(item.id == "HUMPHREY_B"){
+                  menuItemB.style.background = 'url("https://files.catbox.moe/5593hu.png")';
+              }
+              if(item.id == "KENNEDY_B"){
+                  menuItemB.style.background = 'url("https://files.catbox.moe/k5rh3g.png")';
+              }
+              if (item.id == "WALLACE_B"){
+                  menuItemB.style.background = 'url("https://files.catbox.moe/n19c4r.png")'
+              }
+              if (item.id == "CARTER_B"){
+                  menuItemB.style.background = 'url("https://files.catbox.moe/r2kuxn.png")'
+              }
+
             menuItemB.style.marginBottom = '1px';
             menuItemB.style.width = '438px';
             menuItemB.style.height = '90px';
@@ -5777,7 +5919,7 @@ function openSurrogates() {
             textB.style.mozOsxFontSmoothing = "none"; 
             textB.style.fontWeight = "450"; 
             textB.style.position = "absolute"; 
-            textB.style.marginLeft = "-7px";    
+            textB.style.marginLeft = "-5px";    
             textB.style.marginTop = "29px";    
 
             textAndButtonB.appendChild(textB);

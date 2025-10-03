@@ -19,7 +19,7 @@ campaignTrail_temp.election_json = [
             "summary": "<p><h3>My God, can't they see? Can't they all see?</h3><br><br>The world is ending. <b>America itself</b> is ending. These Democrats, the radical liberal nuts, these kooks — they... they cannot protect it. None of them. They're irresponsible, dangerous even. They— they cannot possibly be trusted. In the modern... in the nuclear age, you cannot entrust the White House upon them. Goddamn, you can't trust them with anything.<br><br>Our time was limited. Had I not won 1972, this Republic would collapse. A crisis, a terrible crisis was coming. We... we only had 5 years left. 5 years to grow stronger, to make the best deals, I— I couldn't leave it up to chance. Up to <b>them</b>. These bastards would ruin what we built, what we— what we fought for.<br><br>I did it all to protect the nation. I— all in defense of... I...<br><br>I...<br></b><p>",
             "image_url": "https://files.catbox.moe/snug4k.png",
             "winning_electoral_vote_number": 270,
-            "advisor_url": "123",
+            "advisor_url": "https://files.catbox.moe/hqpltk.png",
             "recommended_reading": "THE HOLY BIBLE",
             "has_visits": 1,
             "no_electoral_majority_image": "../static/images/2012-no-majority.jpg"
@@ -243,7 +243,8 @@ jet_data = {
 //#startcode
 
 
-corrr = '\n              <h2>The Campaign Trail.</h2>\n            ';
+$("#dynamic-favicon").attr("href", "https://files.catbox.moe/57f8k8.png");
+document.title = "The Caretaker";
 
 corrr = `<div style="font-size: 8px; font-family: monospace; color: white;">
     </div>
@@ -386,11 +387,54 @@ styling.innerHTML = `
     position: relative;
     left: 150px;
  }
+
+ #election_night_window img {
+     opacity: 0.95;
+     width: 260px; /* Adjust as needed */
+     height: 170px; /* Maintain aspect ratio */
+     border: 1px solid transparent;
+     outline: 1px solid #201F1A;
+     box-shadow: none !important;
+ }
+
+ #visit_content img {
+     opacity: 0.95;
+     width: 260px; /* Adjust as needed */
+     height: 170px; /* Maintain aspect ratio */
+     border: 1px solid transparent;
+     outline: 1px solid #201F1A;
+     box-shadow: none !important;
+ }
+
+  #visit_content p {
+     color: #0a0908;
+ }
+
   #credits {
      position: relative;
      left:-253px;
      bottom: -90px;
    }
+
+   #achievement-box {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #FFFFFF;
+          color: white;
+          padding: 15px 30px;
+          border-radius: 8px;
+          font-size: 18px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          opacity: 0;
+          transition: opacity 1s ease-in-out;
+          z-index: 1000;
+        }
+
+        #achievement-box.visible {
+          opacity: 1;
+        }
+
 
       #election_image {
           margin-left: 0px;
@@ -544,7 +588,9 @@ z.observe(document, { subtree: true, childList: true });
         position: relative;
         display: inline-block;
         cursor: pointer;
-        background-color: #0a0908;
+        background-color: #035e7b;
+        color: white;
+        font-style: italic;
     }
     
     .mytooltip .mytooltiptext {
@@ -1299,7 +1345,7 @@ margin-top:0.2em
               overflow:visible;
           }
           #visit_window {
-              font-size: 1.8em;
+              font-size: 1.5em;
               width: 90%;
               left:5%;
           }
@@ -1325,4 +1371,11 @@ const gameWindow_player = document.getElementById("game_window");
 setupMusicPlayer();
 
 
+campaignTrail_temp.achievements = {
+    "Quiet Quitting": {
+        "image": "https://i.imgur.com/DTCKvKx.png",
+        "description": "Catch a whiff of pure evil and live to tell the tale.",
+        "cannotBeCheated": true
+    }
+}
 //#endcode
