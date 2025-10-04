@@ -2,7 +2,7 @@ document.getElementById("inner_window_1").children[0].innerHTML = `<h3 style=\"c
 document.getElementById("inner_window_1").children[1].style.marginLeft = "-20px";
 document.getElementById("inner_window_1").children[1].style.width = "calc(100% + -40px)"; // Adjust the value as needed
 document.getElementById("inner_window_1").children[1].innerHTML = `
-  <b style="color:#478F9C;">Preface</b><br><br>
+  <b style="color:#478F9C;">Prologue</b><br><br>
   <img src="https://files.catbox.moe/kohzjf.png" alt="Image" style="width: %;">
   <p><span class="pulsating-blue">America is under attack, a siege.<br><br>For too long, it had been ruled by the loud minority of this nation — pointy-headed intellectuals, the shouters, the demonstrators. They addicted this country to welfare. They burned down our cities, pit Americans against each other. They tore this nation, this home of opportunity apart by racial violence. They tied down the strongest nation on earth for years in Vietnam.<br><br>When the great, silent majority of this nation finally fought back and elected Richard Nixon as President, they seethed and reeled. They lied about their President, insulted the very idea of America — all to glee of our enemies in Hanoi. They sabotaged the Administration at every possible turn. When the people saw through their manipulations and granted the President a second term, they unleashed the dirtiest of tricks, and paralyzed the entire Executive Branch with kooky Watergate investigations.<br><br>Now they try to reclaim the White House for themselves. But Dick Nixon came too far to let them. He will fight back. He will come out stronger than before, as he always did. He will protect America.</span></p>`;
 document.getElementById("game_start").innerHTML = "<strong>Silence. Nothing but silence.</strong>";
@@ -15,7 +15,7 @@ campaignTrail_temp.election_json = [
         "fields": {
             "year": 1976,
             "display_year": "1974-1976",
-            "site_description": "<strong>The Caretaker</strong><br><b><small>Dawn</small></b><br><br><b>The American Dream is on its deathbed.</b><br><br>Political violence and terror shake the country. Crime and poverty reign in the cities. In 1973, for the first time in history, America lost a war. Then came the revelation that the President of the United States, her chief constitutional officer, was no better than a mafia don. <b>The last best hope on earth has seemingly fallen.</b><br><br>It's at this pivotal moment that <b>Gerald Ford</b>, the man who wanted it the least, takes over the disillusioned, broken nation.</p>\n\nAs the exhausted country struggles to find its way between <b>reckoning, nostalgia, rage and denial</b>, Gerry Ford will have to fight tooth and nail to bring morning back to America - <b>or face the dark.</b>",
+            "site_description": "<strong>Dawn</strong><br><b><small>Foreword</small></b><br><br><b>The American Dream is on its deathbed.</b><br><br>Political violence and terror shake the country. Crime and poverty reign in the cities. In 1973, for the first time in history, America lost a war. Then came the revelation that the President of the United States, her chief constitutional officer, was no better than a mafia don. <b>The last best hope on earth has seemingly fallen.</b><br><br>It's at this pivotal moment that <b>Gerald Ford</b>, the man who wanted it the least, takes over the disillusioned, broken nation.</p>\n\nAs the exhausted country struggles to find its way between <b>reckoning, nostalgia, rage and denial</b>, Gerry Ford will have to fight tooth and nail to bring morning back to America - <b>or face the dark.</b>",
             "summary": "<p><h3>My God, can't they see? Can't they all see?</h3><br><br>The world is ending. <b>America itself</b> is ending. These Democrats, the radical liberal nuts, these kooks — they... they cannot protect it. None of them. They're irresponsible, dangerous even. They— they cannot possibly be trusted. In the modern... in the nuclear age, you cannot entrust the White House upon them. Goddamn, you can't trust them with anything.<br><br>Our time was limited. Had I not won 1972, this Republic would collapse. A crisis, a terrible crisis was coming. We... we only had 5 years left. 5 years to grow stronger, to make the best deals, I— I couldn't leave it up to chance. Up to <b>them</b>. These bastards would ruin what we built, what we— what we fought for.<br><br>I did it all to protect the nation. I— all in defense of... I...<br><br>I...<br></b><p>",
             "image_url": "https://files.catbox.moe/snug4k.png",
             "winning_electoral_vote_number": 270,
@@ -29,7 +29,7 @@ campaignTrail_temp.election_json = [
 
 campaignTrail_temp.modBoxTheme = {
   "header_color": "#485284",
-  "header_image_url": "https://files.catbox.moe/nx2c4o.png",
+  "header_image_url": "https://files.catbox.moe/hv9fwf.png",
   "header_text_color": "#ffffff",
   "description_text_color": "#000000",
   "description_background_color": "#ffffff",
@@ -96,7 +96,7 @@ campaignTrail_temp.candidate_json = [
             "state": "Idaho",
             "priority": 1,
             "description": "<p>Put description here</p>",
-            "color_hex": "#0000FF",
+            "color_hex": "#D17D7D",
             "secondary_color_hex": null,
             "is_active": 0,
             "image_url": "https://www.jetsimon.com/public/candidateexample.png",
@@ -119,7 +119,7 @@ campaignTrail_temp.candidate_json = [
             "state": "Idaho",
             "priority": 1,
             "description": "<p>Put description here</p>",
-            "color_hex": "#0000FF",
+            "color_hex": "#D17D7D",
             "secondary_color_hex": null,
             "is_active": 0,
             "image_url": "https://www.jetsimon.com/public/candidateexample.png",
@@ -145,7 +145,7 @@ campaignTrail_temp.candidate_json = [
                 "color_hex": "#7c7cd0",
                 "secondary_color_hex": null,
                 "is_active": 1,
-                "image_url": "https://files.catbox.moe/rd4quk.png",
+                "image_url": "https://files.catbox.moe/59khh4.png",
                 "electoral_victory_message": "This guy wins!",
                 "electoral_loss_message": "This guy loses!",
                 "no_electoral_majority_message": "We all win?",
@@ -176,6 +176,52 @@ campaignTrail_temp.candidate_json = [
             "candidate_score": 1,
             "running_mate": true
         }
+    },
+        {
+            "model": "campaign_trail.candidate",
+            "pk": 93,
+            "fields": {
+                "first_name": "Mr",
+                "last_name": "Hopefuls",
+                "election": 10,
+                "party": "Independent",
+                "state": "California",
+                "priority": 1,
+                "description": "Test",
+                "color_hex": "#7c7cd0",
+                "secondary_color_hex": null,
+                "is_active": 0,
+                "image_url": "https://files.catbox.moe/rd4quk.png",
+                "electoral_victory_message": "This guy wins!",
+                "electoral_loss_message": "This guy loses!",
+                "no_electoral_majority_message": "We all win?",
+                "description_as_running_mate": null,
+                "candidate_score": 1,
+                "running_mate": false
+            }
+        },
+    {
+        "model": "campaign_trail.candidate",
+        "pk": 2003,
+        "fields": {
+            "first_name": "ass",
+            "last_name": "ass",
+            "election": 10,
+            "party": "Independent",
+            "state": "Michigan",
+            "priority": 1,
+            "description": "<p>Put description here</p>",
+            "color_hex": "#0000FF",
+            "secondary_color_hex": null,
+            "is_active": 0,
+            "image_url": "https://www.jetsimon.com/public/candidateexample.png",
+            "electoral_victory_message": "This guy wins!",
+            "electoral_loss_message": "This guy loses!",
+            "no_electoral_majority_message": "We all win?",
+            "description_as_running_mate": null,
+            "candidate_score": 0,
+            "running_mate": true
+        }
     }
 ]
 
@@ -201,7 +247,7 @@ campaignTrail_temp.running_mate_json = [
         "pk": 157544,
         "fields": {
             "candidate": 93,
-            "running_mate": 2002
+            "running_mate": 2003
         }
     }
 ]
@@ -211,7 +257,8 @@ campaignTrail_temp.opponents_default_json = [
         "election": 10,
         "candidates": [
             91,
-            92
+            92,
+            93
         ]
     }
 ]
@@ -221,7 +268,8 @@ campaignTrail_temp.opponents_weighted_json = [
         "election": 10,
         "candidates": [
             91,
-            92
+            92,
+            93
         ]
     }
 ]
@@ -257,7 +305,7 @@ nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#7f3c39";
 document.getElementsByClassName("game_header")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
 
 $("#game_window")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
-$("#game_window")[0].style.backgroundImage = "url(https://i.imgur.com/39bg8Op.png)" 
+$("#game_window")[0].style.backgroundImage = "url(https://files.catbox.moe/qt01w6.png)" 
 
 $(".container")[0].style.backgroundColor = "#adaca1";
 
@@ -298,47 +346,6 @@ jet_data = {
     "gameTitle": "The Campaign Trail."
 }
 
-//#startcode
-
-
-corrr = '\n              <h2>The Campaign Trail.</h2>\n            ';
-
-corrr = `<div style="font-size: 8px; font-family: monospace; color: white;">
-    </div>
-    `;
-
-nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#395887";
-
-nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#7f3c39";
-
-document.getElementsByClassName("game_header")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
-
-$("#game_window")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
-$("#game_window")[0].style.backgroundImage = "url(https://i.imgur.com/39bg8Op.png)" 
-
-$(".container")[0].style.backgroundColor = "#adaca1";
-
-document.getElementById("header").src = "https://i.imgur.com/QN7MHZq.png";
-
-document.body.background = "https://i.imgur.com/7eEiorb.png";
-
-document.head.innerHTML += "<style>#results_container {color:#000000;} .inner_window_w_desc {background-color:#9d6f6c!important;}</style>";
-
-campaignTrail_temp.modBoxTheme = {
-     "header_color": "#395887",
-     "header_text_color": "#e8e7d7",
-     "description_text_color": "#000000",
-     "description_background_color": "#e8e7d7",
-     "main_color": "#7f3c39",
-     "secondary_color": "#395887",
-     "ui_text_color": "#FFFFFF"
-}
-
-styling = document.createElement("style");
-
-document.head.appendChild(styling);
-
-
 styling.innerHTML = `
 
 #opponent_selection_id_back {
@@ -348,18 +355,26 @@ styling.innerHTML = `
 }
 
 #inner_window_1 {
-    background-color: #1F1D19;
+    background-color: #1f1e1a;
     height: 494px; 
-    color: #F8F8F8;
+    color: #EFEFEF;
   }
 
  #inner_window_2{
-   background-color: #DFDFD9; 
-   color: #F8F8F8;
-   animation: bgFadeS1 1s ease-in-out forwards !important;
+   background-color: #1f1e1a; 
+   color: #EFEFEF;
  }
- #election_description_window{
-   background-color: #1F1D19;
+ 
+ #inner_window_4 h3,
+ #candidate_form h3,
+ #running_mate_form h3,
+ .inner_inner_window h3 {
+  color: #EFEFEF;
+ }
+
+ #election_description_window,
+ #inner_window{
+   background-color: #1f1e1a;
    font-size:12.6px;
    height: 317px;          
  }
@@ -368,7 +383,6 @@ styling.innerHTML = `
    text-align: left;
    width:auto;
    z-index: 0;
-   color: #DFDFD9;
    position: absolute; 
    left:400px;
    top: 60px;
@@ -588,9 +602,9 @@ z.observe(document, { subtree: true, childList: true });
         position: relative;
         display: inline-block;
         cursor: pointer;
-        background-color: #035e7b;
-        color: white;
-        font-style: italic;
+        text-decoration: none;
+        font-style: italic; 
+        background-color: rgba(30, 134, 222, 0.6);
     }
     
     .mytooltip .mytooltiptext {
@@ -630,9 +644,10 @@ z.observe(document, { subtree: true, childList: true });
         }
   
         .inner_window_question h3 .mytooltip{
-            background-color: #035e7b;
-            font-style: italic;
-            padding: 2px; 
+        text-decoration: none;
+        font-style: italic; 
+        color: #EFEFEF;
+        background-color: rgba(30, 134, 222, 0.6);             
         }
   
     `;
@@ -650,7 +665,10 @@ z.observe(document, { subtree: true, childList: true });
 
   tooltipList = [
     // Q1
-    {searchString: "Bob Dole", explanationText: "<img src=https://cdn.discordapp.com/attachments/1419444230165889115/1422827400605204490/Leonid_Brezhnev.png?ex=68debf87&is=68dd6e07&hm=d268fdb3b42fd1bda23698915314f4314b747a2ccf1ba9b776c7786018e4c941&> Extremely Overrated!"},
+    {searchString: "America doesn't want you, it doesn't need you.", explanationText: "<img src=https://files.catbox.moe/yj8mkk.png>"},
+    {searchString: "Those disgusting Washington Post pigs", explanationText: "<img src=https://files.catbox.moe/5rr5j7.png><br><b>The enemy</b>."},
+    {searchString: "Pat", explanationText: "<img src=https://files.catbox.moe/d5prsh.png><br>The only one that is still here."},
+    {searchString: "I'll send Kissinger the letter", explanationText: "<img src=https://files.catbox.moe/c5pf5j.jpg>"},
     ];
 
 class Song {
@@ -1164,7 +1182,7 @@ appearance: slider-vertical;
 }
 
 .inner_window_question h3 {
-  background-color:#05094D;
+  background-color:#1F1E19;
   border-radius: 5px;
   box-shadow: 
   0 0 5px rgba(224, 255, 255, 0.5),  
@@ -1217,10 +1235,6 @@ appearance: slider-vertical;
 #progress_bar h3 {
   color: #05094D;
   }
-
-  .inner_inner_window h3 {
-      color: #ffffff;
-      }
 
   .inner_window_sign_display {
       background-color:#f1f1f1;
