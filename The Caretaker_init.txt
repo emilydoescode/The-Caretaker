@@ -164,7 +164,7 @@ campaignTrail_temp.candidate_json = [
             "party": "Republican Party",
             "state": "New York",
             "priority": 1,
-            "description": "<strong>For all the talk that he might give about a future of liberal Republicanism</strong>, the truth is that Rocky does not see a future for himself in any other position of pówer. He does not see himself sitting in the Oval, he doesn't want to be in it anymore.<br><br><strong>Nelson Rockefeller</strong> is an endling, the last one of his kind, the one who Ford chose both due to the Democrats on the Hill and because he wants to try reviving a movement that he can see is on its deathbed. But, just maybe, he is right. Maybe, with the power this appointment has what is needed to revive a dying species.<br><br><strong>Just maybe.</strong>",
+            "description": "<strong>For all the talk that he might give about a future of liberal Republicanism</strong>, the truth is, Rocky does not see a future for himself in any other position of power. He does not see himself sitting in the Oval, he doesn't want to be in it anymore.<br><br><strong>Nelson Rockefeller</strong> is an endling, the last one of his kind, the one who Ford chose both due to the Democrats on the Hill and because he wants to try reviving a movement that he can see is on its deathbed. But, just maybe, he is right. Maybe, with the power this appointment has what is needed to revive a dying species.<br><br><strong>Just maybe.</strong>",
             "color_hex": "#0000FF",
             "secondary_color_hex": null,
             "is_active": 0,
