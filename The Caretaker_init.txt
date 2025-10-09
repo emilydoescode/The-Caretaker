@@ -50,7 +50,7 @@ campaignTrail_temp.temp_election_list = [
 campaignTrail_temp.credits = "<button onclick='credits()'>The Caretakers</button>"
 
 credits = function() {
-  credits = [ "Losos: Lead, Design, Writing, Code", "Emmy: Code, Assets, Music, Writing", "GeneralDoggo: Design, Assets", "Kyiv_Worker: Design", "Ariandel: Design"]
+  credits = [ "Losos: Lead, Design, Writing, Code", "Emmy: Code, Assets, Music, Writing", "GeneralDoggo: Design, Assets", "Kyiv_Worker: Design", "Ariandel: Design", "Special Thanks to Diamondy"]
   text = "CREDITS:\n\n"
   for (i in credits) {
       text += credits[i] + "\n"
@@ -305,7 +305,7 @@ nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#7f3c39";
 document.getElementsByClassName("game_header")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
 
 $("#game_window")[0].style.backgroundColor = nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
-$("#game_window")[0].style.backgroundImage = "url(https://files.catbox.moe/qt01w6.png)" 
+$("#game_window")[0].style.backgroundImage = "url(https://files.catbox.moe/o3djw7.png)" 
 
 $(".container")[0].style.backgroundColor = "#adaca1";
 
@@ -669,6 +669,12 @@ z.observe(document, { subtree: true, childList: true });
     {searchString: "Those disgusting Washington Post pigs", explanationText: "<img src=https://files.catbox.moe/5rr5j7.png><br><b>The enemy</b>."},
     {searchString: "Pat", explanationText: "<img src=https://files.catbox.moe/d5prsh.png><br>The only one that is still here."},
     {searchString: "I'll send Kissinger the letter", explanationText: "<img src=https://files.catbox.moe/c5pf5j.jpg>"},
+
+    //Q2 
+    {searchString: "Nixon", explanationText: "<img src=https://files.catbox.moe/zzakbu.png><br>My predecessor."},
+    {searchString: "the former president", explanationText: "<img src=https://files.catbox.moe/zzakbu.png><br>My predecessor."},
+    {searchString: "our nation", explanationText: "<img src=https://files.catbox.moe/ziugwn.png>"},
+    {searchString: "Reagan", explanationText: "<img src=https://files.catbox.moe/gdnefo.png><br>Unstable."},
     ];
 
 class Song {
@@ -820,9 +826,57 @@ const song2 = new Song(
   "https://files.catbox.moe/to36xa.mp3"
 );
 
+const song3 = new Song(
+  "Waterloo",
+  "ABBA",
+  "https://files.catbox.moe/4aplaw.png",
+  "https://files.catbox.moe/0mp7dj.mp3"
+);
+
+const song4 = new Song(
+"Where's the Orchestra?",
+  "Billy Joel",
+  "https://files.catbox.moe/maqupy.png",
+  "https://files.catbox.moe/z4sqnw.mp3"
+);
+
+const song5 = new Song(
+  "Don't Go Breaking My Heart",
+  "Elton John",
+  "https://files.catbox.moe/6zy5s6.png",
+  "https://files.catbox.moe/otyn3y.mp3"
+);
+
+const song6 = new Song(
+  "Mr. Blue Sky",
+  "Electric Light Orchestra",
+  "https://files.catbox.moe/hw2hng.png",
+  "https://files.catbox.moe/2m2415.mp3"
+);
+
+const song7 = new Song(
+  "If You Leave Me Now",
+  "Chicago",
+  "https://files.catbox.moe/mdg5kd.png",
+  "https://files.catbox.moe/2zvvyz.mp3"
+);
+
+const song8 = new Song(
+  "Time in a Bottle",
+  "Jim Croce",
+  "https://files.catbox.moe/xlp8zp.png",
+  "https://files.catbox.moe/col6dd.mp3"
+);
 
 playlist.addSong(song1);
 playlist.addSong(song2);
+playlist.addSong(song3);
+playlist.addSong(song4);
+playlist.addSong(song5);
+playlist.addSong(song6);
+playlist.addSong(song7);
+playlist.addSong(song8);
+
 
 const playerContainer = document.createElement("div");
 playerContainer.id = "player";
@@ -836,7 +890,6 @@ displayBox.appendChild(coverElement);
 
 const infoContainer = document.createElement("div");
 infoContainer.id = "info-container";
-infoContainer.style.backgroundImage = "url('https://i.imgur.com/BSXotSO.png')";
 infoContainer.style.backgroundSize = "cover"; // Optional: adjust based on your needs
 infoContainer.style.color = "#cfcfcf"; // Set text color to white
 infoContainer.style.position = 'relative';
@@ -981,11 +1034,6 @@ playerContainer.appendChild(controlsContainer);
 const volumeContainer = document.createElement("div");
 volumeContainer.id = "volume-container";
 
-const volumeLabel = document.createElement("img");
-volumeLabel.src = "https://i.imgur.com/jjUzV10.png"; // Set the volume image
-volumeLabel.alt = "Volume";
-volumeContainer.appendChild(volumeLabel);
-
 const volumeSliderContainer = document.createElement("div");
 volumeSliderContainer.classList.add("is-vertical");
 volumeSliderContainer.style.marginLeft = "23%";
@@ -1088,7 +1136,7 @@ style.textContent = `
   display: flex;
   flex-direction: row;
 height:191px;
-  background-Image: url("https://i.imgur.com/57IeWZc.png"); 
+  background-Image: url("https://files.catbox.moe/38k1n6.png"); 
 }
 
 #display-box {
@@ -1098,8 +1146,8 @@ height:191px;
 }
 
 #cover {
-  width: 176px;
-height:176px;
+  width: 177px;
+height:177px;
 }
 
 #info-container {
@@ -1132,21 +1180,25 @@ appearance: slider-vertical;
 #controls {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   width: 80%;
+  margin-top: 80px;
+  opacity: 0.1;
+  margin-left: -40px;
 }
 
 #progress-bar-container {
-  width: 100%;
+  width: 92%;
+  margin-top: -159px;
 }
 
 #progress-bar {
-  width: 80%;
+  width: 45%;
   margin: auto;
   display: flex;
-  margin-top: 20px;
+  margin-top: 27px;
   appearance: none; 
-  background: #ccc; 
+  background: #9b9ea2;
   height: 5px; 
   border-radius: 5px; 
   outline: none; 
@@ -1155,18 +1207,18 @@ appearance: slider-vertical;
 
 #progress-bar::-webkit-slider-thumb {
   appearance: none; /* Remove default styling for consistency across browsers */
-  width: 15px;
-  height: 15px;
-  background: #333; /* Slider thumb color */
-  border-radius: 50%; /* Round thumb */
+  width: 8px;
+  height: 29px;
+  background: #a72b22; /* Slider thumb color */
+  border-radius: 0%;
   cursor: pointer;
 }
 
 #progress-bar::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  background: #333;
-  border-radius: 50%;
+  width: 8px;
+  height: 29px;
+  background: #a72b22; /* Slider thumb color */
+  border-radius: 0%;
   cursor: pointer;
 }
 

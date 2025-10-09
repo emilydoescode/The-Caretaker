@@ -13,7 +13,7 @@ campaignTrail_temp.questions_json = [
         "pk": 410,
         "fields": {
             "priority": 0,
-            "description": "rocky?",
+            "description": "It all happened so fast. The smoking gun tape, the fate-sealing address, the hasty inauguration, your first words to the broken nation as its President. You are now the torch-bearer of the free world, even if that torch hadn't been dimmer since the Civil War and the Great Depression. The truth is, though, you cannot chart the new course of this nation alone - you will need a team. The cabinet you have inherited is mostly competent, although marred by Nixon's crimes and increasingly loathed by your right flank. Will you push for changes in the White House, or continuity is best?",
             "likelihood": 1
         }
     },
@@ -76,7 +76,7 @@ campaignTrail_temp.questions_json = [
 campaignTrail_temp.answers_json = [
     {
         "model": "campaign_trail.answer",
-        "pk": 1435,
+        "pk": 14351,
         "fields": {
             "question": 409,
             "description": "I... I can't do this anymore, dear. It's too much, these loons have been peeling me off and it's just... I'll send Kissinger the letter. Call Price, tell him to write a speech, make it a good one, it will be our last one here.\n"
@@ -84,10 +84,34 @@ campaignTrail_temp.answers_json = [
     },
     {
         "model": "campaign_trail.answer",
-        "pk": 1436,
+        "pk": 14352,
         "fields": {
             "question": 409,
             "description": "They can't do this to me, Pat. They're crazy, insane! I won't do it, I don't care what those Republicans think, I'll fight until the end. I'll fight and fight and fight again if needed be. I can't let them do it. I won't let them do it.\n"
+        }
+    },
+    {
+        "model": "campaign_trail.answer",
+        "pk": 14353,
+        "fields": {
+            "question": 410,
+            "description": "It is time for our nation to heal. We must, above all else, move beyond Watergate and push for honesty and integrity in the government. To that end, some of the former president's men will have to go - but it's for the best.\n"
+        }
+    },
+    {
+        "model": "campaign_trail.answer",
+        "pk": 14354,
+        "fields": {
+            "question": 410,
+            "description": "Right now America needs stability. What kind of signal will we send by spontaneous changes on top? Let's keep it how it is, for now at least.\n"
+        }
+    },
+    {
+        "model": "campaign_trail.answer",
+        "pk": 14355,
+        "fields": {
+            "question": 410,
+            "description": "The truth is, our party is fracturing at the seams. The losses we'll experience this Fall are projected to be historic. If we want Republicans to stand strong, we got to make them stand united. Let's give Reagan and Buckley's people some concessions - a good deed might go a long way.\n"
         }
     }
 ]
@@ -855,9 +879,9 @@ campaignTrail_temp.issues_json = [
         "model": "campaign_trail.issue",
         "pk": 36,
         "fields": {
-            "name": "National Defense",
+            "name": "His Shadow",
             "description": 0,
-            "stance_1": "Very Hawkish",
+            "stance_1": "Everpresent",
             "stance_desc_1": 0,
             "stance_2": "Hawkish",
             "stance_desc_2": 0,
@@ -5017,7 +5041,7 @@ campaignTrail_temp.answer_feedback_json = [
         "model": "campaign_trail.answer_feedback",
         "pk": 68888,
         "fields": {
-            "answer": 1435,
+            "answer": 14351,
             "candidate": 92,
             "answer_feedback": "Your speech is televised to every corner of America and beyond. It talks about some \"long and arduous period,\" but all people hear is that part - \"Therefore, I shall resign the Presidency effective at noon tomorrow.\" All around the nation, from Washington to Yorba Linda, cheers are heard, the tyrant king has fallen, left fleeing in disgrace. Ford is sworn in the next day with little pomp or fanfare. They all look towards the new President. They don't want another failure. They don't want you.\n"
         }
@@ -5026,11 +5050,12 @@ campaignTrail_temp.answer_feedback_json = [
         "model": "campaign_trail.answer_feedback",
         "pk": 68889,
         "fields": {
-            "answer": 1436,
+            "answer": 14352,
             "candidate": 92,
             "answer_feedback": "You try and try and try again to fight, but it doesn't matter. Everyone has abandoned you—even the Republicans. After a week, you're impeached, and in the next, you're removed from office. A monumental first, a true symbol of the people's might. Bob Woodward and Carl Bernstein celebrate by writing the sweet, sweet words they always wanted to write on the Washington Post's front page: \"NIXON REMOVED,\" it reads. You don't leave as a man, or as a president. You leave as a shadow. A man who is there for only one thing, to haunt Ford for the rest of his life."
         }
-    }
+    },
+    
 ]
 
 
@@ -5175,7 +5200,6 @@ var NixonBye = false;
 var ImpeachNixon = 0;
 var FordBye = false;
 var FordVP = 0;
-var VPNo = 0; 
 let vpSwitcherTriggered = false;
 let Nominee = "Nixon"; 
 let VP = "Ford";
@@ -5426,12 +5450,15 @@ function changechart() {
             //DEMS
             if(Nominee == "Nixon"){
                 overallthing = overallthing.replace("Democrats", "<span class='tooltip-container'>Democrats<span class='tooltip'><img src=https://files.catbox.moe/2vbszt.png><br><p style=\"font-size: 13px; margin: 2px 0;\">The Enemy</p><p style=\"font-size: 15px; margin: 2px 0;\">The Democratic Party</p><span style=\"font-size: 12px; margin: 2px 0;\">We tried so hard to protect this civilization—was it worth anything? Where did it all go wrong? Where did I fail? Everything we did, everything I fought for, all of this. Is anyone here to listen to me again?</span></span></span>");
+                overallthing = overallthing.replace("Hopefuls", "<span class='tooltip-container'>Hopefuls<span class='tooltip'><img src=https://files.catbox.moe/2vbszt.png><br><p style=\"font-size: 13px; margin: 2px 0;\">Idiots</p><p style=\"font-size: 15px; margin: 2px 0;\">Hopefuls</p><span style=\"font-size: 12px; margin: 2px 0;\">We tried so hard to protect this civilization—was it worth anything? Where did it all go wrong? Where did I fail? Everything we did, everything I fought for, all of this. Is anyone here to listen to me again?</span></span></span>");
             }
             else if(Nominee == "Ford"){
-                overallthing = overallthing.replace("Democrats", "<span class='tooltip-container'>Democrats<span class='tooltip'><img src=https://files.catbox.moe/iabf9x.png><br><p style=\"font-size: 13px; margin: 2px 0;\">Official Opposition</p><p style=\"font-size: 15px; margin: 2px 0;\">The Democratic Party</p><span style=\"font-size: 12px; margin: 2px 0;\">We tried so hard to protect this civilization—was it worth anything? Where did it all go wrong? Where did I fail? Everything we did, everything I fought for, all of this. Is anyone here to listen to me again?</span></span></span>");
+                overallthing = overallthing.replace("Democrats", "<span class='tooltip-container'>Democrats<span class='tooltip'><img src=https://files.catbox.moe/iabf9x.png><br><p style=\"font-size: 13px; margin: 2px 0;\">Official Opposition</p><p style=\"font-size: 15px; margin: 2px 0;\">The Democratic Party</p><span style=\"font-size: 12px; margin: 2px 0;\">test</span></span></span>");
+                overallthing = overallthing.replace("Hopefuls", "<span class='tooltip-container'>Hopefuls<span class='tooltip'><img src=https://files.catbox.moe/2vbszt.png><br><p style=\"font-size: 13px; margin: 2px 0;\">Splitters</p><p style=\"font-size: 15px; margin: 2px 0;\">Hopefuls</p><span style=\"font-size: 12px; margin: 2px 0;\">We tried so hard to protect this civilization—was it worth anything? Where did it all go wrong? Where did I fail? Everything we did, everything I fought for, all of this. Is anyone here to listen to me again?</span></span></span>");
             }
             else if(Nominee == "Reagan"){
-                overallthing = overallthing.replace("Democrats", "<span class='tooltip-container'>Democrats<span class='tooltip'><img src=https://files.catbox.moe/iabf9x.png><br><p style=\"font-size: 13px; margin: 2px 0;\">Communist Bastards</p><p style=\"font-size: 15px; margin: 2px 0;\">The Democratic Party</p><span style=\"font-size: 12px; margin: 2px 0;\">We tried so hard to protect this civilization—was it worth anything? Where did it all go wrong? Where did I fail? Everything we did, everything I fought for, all of this. Is anyone here to listen to me again?</span></span></span>");
+                overallthing = overallthing.replace("Democrats", "<span class='tooltip-container'>Democrats<span class='tooltip'><img src=https://files.catbox.moe/iabf9x.png><br><p style=\"font-size: 13px; margin: 2px 0;\">Communist Bastards</p><p style=\"font-size: 15px; margin: 2px 0;\">The Democratic Party</p><span style=\"font-size: 12px; margin: 2px 0;\">test</span></span></span>");
+                overallthing = overallthing.replace("Hopefuls", "<span class='tooltip-container'>Hopefuls<span class='tooltip'><img src=https://files.catbox.moe/2vbszt.png><br><p style=\"font-size: 13px; margin: 2px 0;\">Dumbasses</p><p style=\"font-size: 15px; margin: 2px 0;\">Hopefuls</p><span style=\"font-size: 12px; margin: 2px 0;\">We tried so hard to protect this civilization—was it worth anything? Where did it all go wrong? Where did I fail? Everything we did, everything I fought for, all of this. Is anyone here to listen to me again?</span></span></span>");
             }
             document.getElementById("overall_result").innerHTML = overallthing;
             initializeTooltips();
@@ -5612,7 +5639,7 @@ cyoAdventure = function(a) {
     ans = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length-1];
     e.noCounter += 1;
 
-    if (ans == 1435 || ans == 1436) {
+    if (ans == 14351 || ans == 14352) {
         NixonBye = true;
         index = menuItemsA.findIndex(item => item.id === 'BETTY_A');
         if (index !== -1) {
@@ -5621,9 +5648,16 @@ cyoAdventure = function(a) {
         menuItemsA.unshift(BettyLove); 
     }
 
-    if (ans == 1436) {
+    if (ans == 14352) {
         ImpeachNixon = 1;
         FordVP = 1;
+    }
+
+
+    if (ans == 14353) {
+        switcheroo1();
+        Dems = "Carter";
+        triggerTemporarySongForDemocrat(Dems);
     }
 
   if (e.noCounter == 1 && !vpSwitcherTriggered) {
@@ -5632,7 +5666,6 @@ cyoAdventure = function(a) {
           Nominee = "Ford";
           triggerTemporarySongForNominee(Nominee);
       }
-
 
    if (NixonBye == true) {
         updateCandidateProfile(
@@ -5695,7 +5728,7 @@ function switcheroo1() {
     var id = e.candidate_json.map(p=>p.pk).indexOf(91)
     e.candidate_json[id].fields.first_name = "Jimmy"
     e.candidate_json[id].fields.last_name = "Carter" 
-    e.candidate_json[id].fields.color_hex = "#4E809C" 
+    e.candidate_json[id].fields.color_hex = "#BA3D3D" 
 }
 
 function switcheroo55() {
@@ -6049,18 +6082,18 @@ const menuItemsA = [
     { photo: 'https://files.catbox.moe/3wve0s.png', name: 'Rogers Morton', text: 'Rogers has been here for a while now. His time at the RNC showed that he definitely knows a thing about campaigning. His time as our Interior Secretary has been anything but quiet, but I trust him to continue to work diligently.', button: 'Defer', id: 'MORTON_A'},
     { photo: 'https://files.catbox.moe/74sr8p.png', name: 'Earl Butz', text: 'Butz hates the New Deal more than anyone here. He wants the nation to farm everything, everywhere, and export everything we can while keeping most people not hungry. He\'s useful when he\'s quiet.', button: 'Defer', id: 'BUTZ_A'},
     { photo: 'https://files.catbox.moe/u2e723.png', name: 'William Colby', text: 'Bill used to be the top guy in Saigon, but now that he\'s back home, he\'s the top guy of the intelligence agencies. He\'s under some strong pressure by the people to open up the records. They do not want another Hoover.', button: 'Defer', id: 'COLBY_A'},
-    { photo: 'https://files.catbox.moe/4bhdgh.png', name: 'James Schlesinger', text: 'Bill used to be the top guy in Saigon, but now that he\'s back home, he\'s the top guy of the intelligence agencies. He\'s under some strong pressure by the people to open up the records. They do not want another Hoover.', button: 'Defer', id: 'SCHLESINGER_A'},
+    { photo: 'https://files.catbox.moe/4bhdgh.png', name: 'James Schlesinger', text: 'Schlesinger wants the world to blow up, he definitely wants the world to blow up. He wants bigger and better bombs, he wants the draft dodgers to rot in prison, yet he is beloved by the military. We can\'t get rid of him, even if we wanted to.', button: 'Defer', id: 'SCHLESINGER_A'},
 
 ]
 
 const menuItemsB = [
-    { photo: 'https://files.catbox.moe/ihjvll.png', name: 'Carl Albert', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'ALBERT_B'},
-    { photo: 'https://files.catbox.moe/jizllp.png', name: 'Robert Byrd', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'BYRD_B'},
-    { photo: 'https://files.catbox.moe/e8rypa.png', name: 'Edmund Muskie', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'MUSKIE_B'},
-    { photo: 'https://files.catbox.moe/ggwqjg.png', name: 'Hubert Humphrey', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'HUMPHREY_B'},
-    { photo: 'https://files.catbox.moe/jphvsu.png', name: 'Ted Kennedy', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'KENNEDY_B'},
-    { photo: 'https://files.catbox.moe/f0tmjn.png', name: 'George Wallace', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'WALLACE_B'},
-    { photo: 'https://files.catbox.moe/vxmrx5.png', name: 'Jimmy Carter', text: 'The former Vice President and presumptive front runner doesn\'t spend his days fantasizing about another run against you. However a major shake-up to the nation\'s international standing may make him view it as a necessity.', button: 'Defer', id: 'CARTER_B'}
+    { photo: 'https://files.catbox.moe/ihjvll.png', name: 'Carl Albert', text: 'Carl does not, and will not run for President. He\'s just too bogged down in the House, preparing everything for the absolute nightmare that will be vetoing things. At least he isn\'t a southerner of the crazed variety.', button: 'Defer', id: 'ALBERT_B'},
+    { photo: 'https://files.catbox.moe/jizllp.png', name: 'Robert Byrd', text: 'Byrd loves the Senate and he never ever wants to leave it. He learned a lot of things from Lyndon, he learned the power of the machine. Ruthless, masterful in the Hill. At least he has left his days as a Klansman in the past.', button: 'Defer', id: 'BYRD_B'},
+    { photo: 'https://files.catbox.moe/e8rypa.png', name: 'Edmund Muskie', text: 'The Senator from Maine has been trying to get the presidency for a while now, and he keeps failing every time. However, if everything seems to be turning sour for you, then the people might actually long for a few years in Rumford.', button: 'Defer', id: 'MUSKIE_B'},
+    { photo: 'https://files.catbox.moe/ggwqjg.png', name: 'Hubert Humphrey', text: 'Humphrey has gotten meaner in the years after his landslide defeat. Everyone remembers what he did in the Naval Observatory, everything he said about the War, but they might consider voting for him if things get too good for you.', button: 'Defer', id: 'HUMPHREY_B'},
+    { photo: 'https://files.catbox.moe/jphvsu.png', name: 'Ted Kennedy', text: 'The third of the Kennedy trio and the only one to not have been shot. Ted Kennedy might have lost his shiny position in the Senate, but that does not mean he cannot get the people going if you\'re seen as lacking in credibility and wins.', button: 'Defer', id: 'KENNEDY_B'},
+    { photo: 'https://files.catbox.moe/f0tmjn.png', name: 'George Wallace', text: 'The Alabama governor has been trying to win the White House for the better part of the last two decades. He isn\'t popular with people outside the South, but he might manage to snatch the nomination if your victories keep piling up.', button: 'Defer', id: 'WALLACE_B'},
+    { photo: 'https://files.catbox.moe/vxmrx5.png', name: 'Jimmy Carter', text: 'Although unknown to most of the general public, Georgia Governor Jimmy Carter has been seen as a bit of a rising star in the Democratic Party. A poor political and economic showing might help him grab the nomination.', button: 'Defer', id: 'CARTER_B'}
 ]
 
 
@@ -6120,9 +6153,9 @@ const EconMap = {
 const SocialMap = {
     "-5": `Ford is <b>seen</b> as <span style="color: #A84343;">a communist spy</i></span>. (<span style="color:#A84343;">-5</span>)`,
     "-4": `Ford is <b>seen</b> as <i><span style="color: #A84343;">a communist spy</i></span>. (<span style="color:#A84343;">-4</span>)`,
-    "-3": `Ford is <b>seen</b> as <i><span style="color: #A84343;">a liberal</i></span>. (<span style="color:#A84343;">-3</span>)`,
-    "-2": `Ford is <b>seen</b> as <i><span style="color: #A84343;">a liberal</i></span>. (<span style="color:#A84343;">-2</span>)`,
-    "-1": `Ford is <b>seen</b> as <i><span style="color: #A84343;">a liberal-conservative</i></span>. (<span style="color:#A84343;">-1</span>)`,
+    "-3": `Ford is <b>seen</b> as <i><span style="color: #241982;">a liberal</i></span>. (<span style="color:#241982;">-3</span>)`,
+    "-2": `Ford is <b>seen</b> as <i><span style="color: #241982;">a liberal</i></span>. (<span style="color:#241982;">-2</span>)`,
+    "-1": `Ford is <b>seen</b> as <i><span style="color: #241982;">a liberal-conservative</i></span>. (<span style="color:#241982;">-1</span>)`,
     "0": `Ford is <b>seen</b> as <i><span style="color: #A84343;">a centrist</i></span>. (<span style="color:#A84343;">0</span>)`,
     "1": `Ford is <b>seen</b> as <i><span style="color: #E0CD6D;">a conservative-liberal</i></span>. (<span style="color:#E0CD6D;">1</span>)`,
     "2": `Ford is <b>seen</b> as <i><span style="color: #E0CD6D;">a conservative</i></span>. (<span style="color:#E0CD6D;">2</span>)`,
@@ -6163,8 +6196,8 @@ const CongressMap = {
 
 
 var pictureDict2 = {
-    0: "https://files.catbox.moe/igrgb1.png",
-    1: "https://files.catbox.moe/1a90ua.png",
+    0: "https://files.catbox.moe/9otmyl.png",
+    1: "https://files.catbox.moe/2w3c99.png",
 };
 
 function openSurrogates() {
