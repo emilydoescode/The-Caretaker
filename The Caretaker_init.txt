@@ -313,7 +313,7 @@ document.getElementById("header").src = "https://i.imgur.com/QN7MHZq.png";
 
 document.body.background = "https://i.imgur.com/7eEiorb.png";
 
-document.head.innerHTML += "<style>#results_container {color:#000000;} .inner_window_w_desc {background-color:#1f1e1a!important;}</style>";
+document.head.innerHTML += "<style>#results_container {color:#000000;} .inner_window_w_desc {background-color:#0a0908!important;}</style>";
 
 campaignTrail_temp.modBoxTheme = {
      "header_color": "#395887",
@@ -354,14 +354,16 @@ styling.innerHTML = `
 
 }
 
+
+
 #inner_window_1 {
-    background-color: #1f1e1a;
+    background-color: #0a0908;
     height: 494px; 
     color: #EFEFEF;
   }
 
  #inner_window_2{
-   background-color: #1f1e1a; 
+   background-color: #0a0908; 
    color: #EFEFEF;
  }
  
@@ -374,7 +376,7 @@ styling.innerHTML = `
 
  #election_description_window,
  #inner_window{
-   background-color: #1f1e1a;
+   background-color: #0a0908;
    font-size:12.6px;
    height: 317px;          
  }
@@ -456,7 +458,7 @@ styling.innerHTML = `
           width:448px;
           height: 317px;
           background-image: 
-            linear-gradient(to right, transparent, rgba(32, 30, 26, 1)), 
+            linear-gradient(to right, transparent, rgba(10, 9, 8, 1)), 
             url('https://files.catbox.moe/zr22f5.png'); 
           background-size: cover; 
           z-index: 1;
@@ -719,9 +721,7 @@ playNext() {
   this.currentSongIndex = (this.currentSongIndex + 1) % this.songs.length;
 }
 
-playNextSpecial() {
-  this.currentSongIndex = (this.currentSongIndex + 2) % this.songs.length;
-}
+
 
 playPrevious() {
   this.currentSongIndex = (this.currentSongIndex - 1 + this.songs.length) % this.songs.length;
