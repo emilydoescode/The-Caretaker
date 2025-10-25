@@ -5835,8 +5835,8 @@ const CongressMap = {
     "-5": `<b>Congress</b> <i><span style="color: #A84343;">hates</i></span> the Administration. (<span style="color:#A84343;">-5</span>)`,
     "-4": `<b>Congress</b> <i><span style="color: #A84343;">hates</i></span> the Administration. (<span style="color:#A84343;">-4</span>)`,
     "-3": `<b>Congress</b> <i><span style="color: #A84343;">hates</i></span> the Administration. (<span style="color:#A84343;">-3</span>)`,
-    "-2": `<b>Congress</b> <i><span style="color: #A84343;">is uncooperative with</i></span> the Administration. (<span style="color:#A84343;">-2</span>)`,
-    "-1": `<b>Congress</b> <i><span style="color: #A84343;">is uncooperative with</i></span> the Administration. (<span style="color:#A84343;">-1</span>)`,
+    "-2": `<b>Congress</b> <i><span style="color: #A84343;">is stalling</i></span> the Administration. (<span style="color:#A84343;">-2</span>)`,
+    "-1": `<b>Congress</b> <i><span style="color: #A84343;">is stalling</i></span> the Administration. (<span style="color:#A84343;">-1</span>)`,
     "0": `<b>Congress</b> <i><span style="color: #A84343;">doesn't care about</i></span> the Administration. (<span style="color:#A84343;">0</span>)`,
     "1": `<b>Congress</b> <i><span style="color: #E0CD6D;">is cooperative with</i></span> the Administration. (<span style="color:#E0CD6D;">1</span>)`,
     "2": `<b>Congress</b> <i><span style="color: #E0CD6D;">is cooperative with</i></span> the Administration. (<span style="color:#E0CD6D;">2</span>)`,
@@ -5847,8 +5847,8 @@ const CongressMap = {
 
 
 var pictureDict2 = {
-    0: "https://files.catbox.moe/3hf1b0.png",
-    1: "https://files.catbox.moe/0ap2sm.png",
+    0: "https://files.catbox.moe/pvflwd.png",
+    1: "https://files.catbox.moe/4e6uqr.png",
 };
 
 function openSurrogates() {
@@ -5860,12 +5860,12 @@ function openSurrogates() {
         popOutMenu = document.createElement('div');
         popOutMenu.id = 'popOutMenu';
         popOutMenu.style.position = 'absolute'; // Change to absolute for relative positioning
-        popOutMenu.style.width = '770px';
-        popOutMenu.style.height = '500px';
-        popOutMenu.style.backgroundColor = '#fff';
+        popOutMenu.style.width = '810px';
+        popOutMenu.style.height = '525px';
+        popOutMenu.style.backgroundColor = '#a3694f';
         popOutMenu.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
         popOutMenu.style.zIndex = '1000';
-        popOutMenu.style.backgroundImage = 'url("https://files.catbox.moe/da22ja.png")';
+        popOutMenu.style.backgroundImage = 'url("https://files.catbox.moe/kw3xfa.png")';
         popOutMenu.style.backgroundSize = 'cover';
         popOutMenu.style.backgroundPosition = 'center';
         popOutMenu.style.alignItems = 'center';     
@@ -5877,11 +5877,9 @@ function openSurrogates() {
         else{
             qpic.src = pictureDict2[e.noCounter];
         }
-        qpic.style.width = '112px';
-        qpic.style.height = '131px';
-        qpic.style.position = "absolute";
-        qpic.style.marginLeft = "633px";
-        qpic.style.marginTop = "35px"; 
+        qpic.style.width = '810px';
+        qpic.style.height = '525px';
+        qpic.style.position = "absolute"; 
         popOutMenu.appendChild(qpic);
 
         //<b><span style="color: #D9321E;">
@@ -5909,15 +5907,15 @@ function openSurrogates() {
         ovsubtxt.style.textAlign = 'left';
         ovsubtxt.style.position = "absolute";
         ovsubtxt.style.lineHeight = '1.3';
-        ovsubtxt.style.top = "31px";  
-        ovsubtxt.style.left = "64px"; 
+        ovsubtxt.style.top = "74px";  
+        ovsubtxt.style.left = "62px"; 
         popOutMenu.appendChild(ovsubtxt);
 
         const admin = document.createElement('p');
         admin.innerHTML = adminer;
         admin.style.position = "absolute";
         admin.style.color = "#0a0908"; 
-        admin.style.left = "200px";
+        admin.style.left = "213px";
         admin.style.bottom = "20px";
         admin.style.fontSize = "18px"; 
         admin.style.fontWeight = "bold";
@@ -5928,7 +5926,7 @@ function openSurrogates() {
         enemy.innerHTML = enemer;
         enemy.style.position = "absolute";
         enemy.style.color = "#0a0908"; 
-        enemy.style.left = "401px";
+        enemy.style.left = "433px";
         enemy.style.bottom = "20px";
         enemy.style.fontSize = "18px";
         enemy.style.fontWeight = "bold";
@@ -5938,8 +5936,8 @@ function openSurrogates() {
         const menuListA = document.createElement('ul');
         menuListA.style.listStyle = 'none';
         menuListA.style.position = "absolute";
-        menuListA.style.top = "215px";
-        menuListA.style.left = "25px";
+        menuListA.style.top = "248px";
+        menuListA.style.left = "39px";
         menuListA.style.padding = '0';
         menuListA.style.maxHeight = '199px'; 
         menuListA.style.maxWidth = '340px';
@@ -5951,8 +5949,8 @@ function openSurrogates() {
         const menuListB = document.createElement('ul');
         menuListB.style.listStyle = 'none';
         menuListB.style.position = "absolute";
-        menuListB.style.top = "215px";  
-        menuListB.style.right = "25px"; 
+        menuListB.style.top = "248px";  
+        menuListB.style.right = "39px"; 
         menuListB.style.padding = '0';
         menuListB.style.maxHeight = '199px'; 
         menuListA.style.maxWidth = '340px';
@@ -6078,8 +6076,8 @@ function openSurrogates() {
         closeButton.innerHTML = "Close";
 
         closeButton.style.position = "absolute";
-        closeButton.style.bottom = "15px";  
-        closeButton.style.left = "10px";
+        closeButton.style.bottom = "19px";  
+        closeButton.style.left = "34px";
 
         closeButton.onclick = closeSurrogates;
         popOutMenu.appendChild(closeButton);
