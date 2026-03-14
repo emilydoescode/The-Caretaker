@@ -3,7 +3,7 @@ document.getElementById("inner_window_1").children[1].style.marginLeft = "-20px"
 document.getElementById("inner_window_1").children[1].style.width = "calc(100% + -40px)"; // Adjust the value as needed
 document.getElementById("inner_window_1").children[1].innerHTML = `
   <b style="color:#478F9C;">Prologue</b><br><br>
-  <img src="https://files.catbox.moe/kohzjf.png" alt="Image" style="width: %;">
+  <img src="https://i.imgur.com/DkClyWM.png" alt="Image" style="width: %;">
   <p><span class="pulsating-blue">America is under attack, a siege.<br><br>For too long, it had been ruled by the loud minority of this nation — pointy-headed intellectuals, the shouters, the demonstrators. They addicted this country to welfare. They burned down our cities, pit Americans against each other. They tore this nation, this home of opportunity apart by racial violence. They tied down the strongest nation on earth for years in Vietnam.<br><br>When the great, silent majority of this nation finally fought back and elected Richard Nixon as President, they seethed and reeled. They lied about their President, insulted the very idea of America — all to glee of our enemies in Hanoi. They sabotaged the Administration at every possible turn. When the people saw through their manipulations and granted the President a second term, they unleashed the dirtiest of tricks, and paralyzed the entire Executive Branch with kooky Watergate investigations.<br><br>Now they try to reclaim the White House for themselves. But Dick Nixon came too far to let them. He will fight back. He will come out stronger than before, as he always did. He will protect America.</span></p>`;
 document.getElementById("game_start").innerHTML = "<strong>Silence. Nothing but silence.</strong>";
 
@@ -19,7 +19,7 @@ campaignTrail_temp.election_json = [
             "summary": "<p><h3>My God, can't they see? Can't they all see?</h3><br><br>The world is ending. <b>America itself</b> is ending. These Democrats, the radical liberal nuts, these kooks — they... they cannot protect it. None of them. They're irresponsible, dangerous even. They— they cannot possibly be trusted. In the modern... in the nuclear age, you cannot entrust the White House upon them. Goddamn, you can't trust them with anything.<br><br>Our time was limited. Had I not won 1972, this Republic would collapse. A crisis, a terrible crisis was coming. We... we only had 5 years left. 5 years to grow stronger, to make the best deals, I— I couldn't leave it up to chance. Up to <b>them</b>. These bastards would ruin what we built, what we— what we fought for.<br><br>I did it all to protect the nation. I— all in defense of... I...<br><br>I...<br></b><p>",
             "image_url": "https://files.catbox.moe/snug4k.png",
             "winning_electoral_vote_number": 270,
-            "advisor_url": "https://files.catbox.moe/hqpltk.png",
+            "advisor_url": "https://i.imgur.com/RvtHRiW.png",
             "recommended_reading": "THE HOLY BIBLE",
             "has_visits": 1,
             "no_electoral_majority_image": "../static/images/2012-no-majority.jpg"
@@ -459,7 +459,7 @@ styling.innerHTML = `
           height: 317px;
           background-image: 
             linear-gradient(to right, transparent, rgba(10, 9, 8, 1)), 
-            url('https://files.catbox.moe/zr22f5.png'); 
+            url('https://i.imgur.com/B5xk00p.png'); 
           background-size: cover; 
           z-index: 1;
             }
@@ -667,16 +667,16 @@ z.observe(document, { subtree: true, childList: true });
 
   tooltipList = [
     // Q1
-    {searchString: "America doesn't want you, it doesn't need you.", explanationText: "<img src=https://files.catbox.moe/yj8mkk.png>"},
-    {searchString: "Those disgusting Washington Post pigs", explanationText: "<img src=https://files.catbox.moe/5rr5j7.png><br><b>The enemy</b>."},
-    {searchString: "Pat", explanationText: "<img src=https://files.catbox.moe/d5prsh.png><br>The only one that is still here."},
+    {searchString: "America doesn't want you, it doesn't need you.", explanationText: "<img src=https://i.imgur.com/URYhTFR.png>"},
+    {searchString: "Those disgusting Washington Post pigs", explanationText: "<img src=https://i.imgur.com/VS1jATh.png><br><b>The enemy</b>."},
+    {searchString: "Pat", explanationText: "<img src=https://i.imgur.com/81uHI1C.png><br>The only one that is still here."},
     {searchString: "I'll send Kissinger the letter", explanationText: "<img src=https://files.catbox.moe/c5pf5j.jpg>"},
 
     //Q2 
-    {searchString: "Nixon", explanationText: "<img src=https://files.catbox.moe/zzakbu.png><br>My predecessor."},
-    {searchString: "the former president", explanationText: "<img src=https://files.catbox.moe/zzakbu.png><br>My predecessor."},
-    {searchString: "our nation", explanationText: "<img src=https://files.catbox.moe/ziugwn.png>"},
-    {searchString: "Reagan", explanationText: "<img src=https://files.catbox.moe/gdnefo.png><br>Unstable."},
+    {searchString: "Nixon", explanationText: "<img src=https://i.imgur.com/MvyxIZT.png><br>My predecessor."},
+    {searchString: "the former president", explanationText: "<img src=https://i.imgur.com/MvyxIZT.png><br>My predecessor."},
+    {searchString: "our nation", explanationText: "<img src=https://i.imgur.com/C4FEkNi.png>"},
+    {searchString: "Reagan", explanationText: "<img src=https://i.imgur.com/yLIImsT.png><br>Unstable."},
     ];
 
 class Song {
